@@ -1,0 +1,6 @@
+application_id,application,model_id,model_label,model_revision,strategy,run,rubric_code,rubric_criterion,prediction,status,aggregation_rule,seed,started_at,finished_at,runtime_seconds,raw_file
+demo_short,DemoShort,mock-a,Mock-A,mock,full_rag,1,A1,A1. Right to access data,1,success,,2234,2026-10-06T09:44:22+00:00,2026-10-06T09:44:22+00:00,0.009,raw/demo_short/mock-a/full_rag/run_01.json
+demo_short,DemoShort,mock-a,Mock-A,mock,full_rag,1,A2,A2. Right to correct or update data,0,success,,2234,2026-10-06T09:44:22+00:00,2026-10-06T09:44:22+00:00,0.009,raw/demo_short/mock-a/full_rag/run_01.json
+demo_short,DemoShort,mock-a,Mock-A,mock,full_rag,1,A3,A3. Right to delete data,1,success,,2234,2026-10-06T09:44:22+00:00,2026-10-06T09:44:22+00:00,0.009,raw/demo_short/mock-a/full_rag/run_01.json
+demo_short,DemoShort,mock-a,Mock-A,mock,full_rag,1,A4,A4. Right to object to processing,1,success,,2234,2026-10-06T09:44:22+00:00,2026-10-06T09:44:22+00:00,0.009,raw/demo_short/mock-a/full_rag/run_01.json
+demo_short,DemoShort,mock-a,Mock-A,mock,full_rag,1,A5,A5. Right to restrict processing,0,success,,2234,2026-10-06T09:44:22+00:00,2026-10-06T09:44:22+00:00,0.009,raw/demo_short/mock-a/full_rag/run_01.json

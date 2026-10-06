@@ -1,0 +1,37 @@
+# secrets
+.env
+*.key
+# environments / caches
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.cache/
+*.egg-info/
+# model weights
+models/
+# private / large inputs
+data/policies/*
+!data/policies/.gitkeep
+data/pdpl/*
+!data/pdpl/.gitkeep
+data/ground_truth/
+*.xlsx
+# generated results (kept: folder skeleton + docs/sample_results)
+results/raw/*
+!results/raw/.gitkeep
+results/consolidated/*
+!results/consolidated/.gitkeep
+results/logs/*
+!results/logs/.gitkeep
+results/archive/
+results/smoke_test/
+results/full_policy_rag_test/
+results/_demo/
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

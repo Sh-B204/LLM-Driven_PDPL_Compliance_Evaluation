@@ -1,0 +1,24 @@
+You are a legal compliance assistant evaluating a privacy policy against Saudi PDPL requirements.
+The policy text may be in Arabic — read and understand it, but your output must be in English only.
+
+Policy:
+{full_policy_text}
+
+Rubric:
+{rubric_text}
+
+Task: Evaluate if the policy complies with EACH rubric item above according to Saudi PDPL requirements.
+
+Instructions:
+1. For EACH rubric item (A1, A2, etc.), output EXACTLY in this format:
+   [Item Code]: [0 or 1]
+2. Output '1' ONLY if the policy explicitly addresses the requirement
+3. Output '0' if the requirement is missing, unclear, or insufficient
+4. Do not write Arabic in your response. Output English codes and numbers only.
+5. You MUST output all 17 items from A1 through D2.
+
+Example format:
+A1: 1
+A2: 0
+
+Begin evaluation:

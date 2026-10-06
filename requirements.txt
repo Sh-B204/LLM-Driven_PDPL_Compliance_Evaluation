@@ -1,0 +1,21 @@
+# Runtime dependencies (mirrors the notebook's install cell; PyTorch is installed separately - see README)
+PyYAML>=6.0
+python-docx
+numpy
+langchain
+langchain-community
+langchain-classic
+langchain-text-splitters
+faiss-cpu
+transformers>=4.44
+accelerate
+huggingface_hub
+bitsandbytes
+# Only for the optional, preserved notebook metrics in src/pdpl_eval/evaluation.py (not used by the pipeline):
+scikit-learn
+pandas
+openpyxl
+# Tests
+pytest
+# PyTorch with CUDA (as in the notebook) is NOT listed here because it needs a custom index:
+#   pip install torch==2.8.0+cu126 torchvision --index-url https://download.pytorch.org/whl/cu126

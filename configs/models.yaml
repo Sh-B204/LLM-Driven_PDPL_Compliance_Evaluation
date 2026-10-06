@@ -1,0 +1,59 @@
+# Models evaluated: exactly the four in the notebook's MODEL_CONFIGS.
+# (The notebook's markdown header also mentions Gemma-7B, but it has no loader/runner,
+#  so it is not part of the executed model set.)
+# 'label' is the notebook's model label and is what appears in result records.
+# 'id' is a filesystem-safe identifier used in results/raw/<app>/<model>/...
+# revision: null  => latest snapshot, as in the notebook. The resolved commit hash is
+#                    recorded in every result. Pin a commit hash here for strict reproducibility.
+models:
+  - id: "allam-7b"
+    label: "ALLaM-7B"
+    type: "hf_local"
+    hf_id: "humain-ai/ALLaM-7B-Instruct-preview"
+    revision: null
+    cache_dir: "./models/ALLaM-7B"
+    tokenizer_use_fast: false
+    trust_remote_code: true
+    torch_dtype: "float16"
+    device_map: "auto"
+    prompt_template: "<s>[INST] {prompt} [/INST]"   # notebook: run_plain(tok, mdl, f"<s>[INST] {p} [/INST]")
+    context_limit_tokens: null                      # null => read from the model config
+
+  - id: "llama-3.1-8b"
+    label: "LLaMA-3.1-8B"
+    type: "hf_local"
+    hf_id: "meta-llama/Llama-3.1-8B-Instruct"
+    revision: null
+    cache_dir: "./models/Llama-3.1-8B"
+    tokenizer_use_fast: false
+    trust_remote_code: true
+    torch_dtype: "float16"
+    device_map: "auto"
+    prompt_template: null                           # raw prompt, as in the notebook
+    context_limit_tokens: null
+
+  - id: "qwen-2.5-7b"
+    label: "Qwen-2.5-7B"
+    type: "hf_local"
+    hf_id: "Qwen/Qwen2.5-7B-Instruct"
+    revision: null
+    cache_dir: "./models/Qwen-2.5-7B"
+    tokenizer_use_fast: false
+    trust_remote_code: true
+    torch_dtype: "float16"
+    device_map: "auto"
+    prompt_template: null
+    context_limit_tokens: null
+
+  - id: "mistral-7b"
+    label: "Mistral-7B"
+    type: "hf_local"
+    hf_id: "mistralai/Mistral-7B-Instruct-v0.3"
+    revision: null
+    cache_dir: "./models/Mistral-7B"
+    tokenizer_use_fast: false
+    trust_remote_code: true
+    torch_dtype: "float16"
+    device_map: "auto"
+    prompt_template: null
+    context_limit_tokens: null

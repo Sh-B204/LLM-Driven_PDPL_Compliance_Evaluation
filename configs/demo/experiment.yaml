@@ -1,0 +1,62 @@
+# Demo/mock configuration (used by --mock and the tests). Same structure as configs/experiment.yaml.
+runs: 5
+applications_file: configs/demo/applications.yaml
+models_file: configs/demo/models.yaml
+rubric_path: rubric/rubric_items.txt
+strategies:
+  section_rag:
+    enabled: true
+    unit: section
+    rag: true
+    prompt_path: prompts/section_rag.txt
+    aggregation: or
+  full_rag:
+    enabled: true
+    unit: full
+    rag: true
+    prompt_path: prompts/full_policy_rag.txt
+  section_norag:
+    enabled: true
+    unit: section
+    rag: false
+    prompt_path: prompts/section_no_rag.txt
+    aggregation: or
+  full_norag:
+    enabled: true
+    unit: full
+    rag: false
+    prompt_path: prompts/full_policy.txt
+retrieval:
+  corpus_path: data/demo/DemoPDPL.docx
+  embedding_model: mock/hash-embedding
+  embedding_max_length: 512
+  embedding_device: null
+  chunking: docx_heading_sections
+  top_k_section: 3
+  top_k_full: 3
+  section_context_separator: '
+
+    '
+  full_context_separator: '
+
+
+    '
+generation:
+  max_new_tokens: 800
+  temperature: 0.1
+  top_p: 0.95
+  repetition_penalty: 1.15
+  do_sample: true
+  seed_base: 1234
+retry:
+  max_attempts: 3
+  base_delay_seconds: 0
+  backoff_factor: 2.0
+  max_delay_seconds: 0
+  jitter_seconds: 0
+output:
+  results_dir: results/_demo
+  hf_token_env: HF_TOKEN
+ground_truth:
+  xlsx_path: data/ground_truth/PDPL Results.xlsx
+  sheet_name: Expert Analysis

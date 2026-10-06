@@ -1,0 +1,16 @@
+# Mock models: deterministic, no GPU, no downloads. For plumbing tests ONLY.
+models:
+  - id: "mock-a"
+    label: "Mock-A"
+    type: "mock"
+    hf_id: "mock/mock-a"
+    revision: "mock"
+    prompt_template: null
+    context_limit_tokens: 20000
+  - id: "mock-b"
+    label: "Mock-B"
+    type: "mock"
+    hf_id: "mock/mock-b"
+    revision: "mock"
+    prompt_template: "<s>[INST] {prompt} [/INST]"
+    context_limit_tokens: 20000

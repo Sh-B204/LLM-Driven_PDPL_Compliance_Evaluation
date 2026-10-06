@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "pipeline_version": "1.0.0",
+  "application": {
+    "id": "demo_short",
+    "name": "DemoShort"
+  },
+  "model": {
+    "id": "mock-a",
+    "label": "Mock-A",
+    "type": "mock",
+    "hf_id": "mock/mock-a",
+    "revision_requested": "mock",
+    "revision_resolved": "mock",
+    "prompt_template": null,
+    "context_limit_tokens": 20000
+  },
+  "strategy": "full_rag",
+  "strategy_notebook_label": "Full-Policy+Law (Experiment 1)",
+  "rag": true,
+  "unit": "full",
+  "run": 1,
+  "policy": {
+    "path": "/home/claude/pdpl-eval/data/demo/DemoShort.docx",
+    "sha256": "d03625fd4e1a2015b08c553fd0b5b2531da5f13ec52f02504d2f952597a0ee4f",
+    "n_sections": 4,
+    "full_text_chars": 382
+  },
+  "rubric": {
+    "path": "/home/claude/pdpl-eval/rubric/rubric_items.txt",
+    "sha256": "2600445d0837715e2cb809f60b57ff5d7bcf447c0882cac8bc22886f03d488cd",
+    "items": [
+      "A1. Right to access data",
+      "A2. Right to correct or update data",
+      "A3. Right to delete data",
+      "A4. Right to object to processing",
+      "A5. Right to restrict processing",
+      "B1. Lawfulness, fairness, and transparency",
+      "B2. Purpose limitation",
+      "B3. Data minimization",
+      "B4. Storage limitation",
+      "B5. Data accuracy",
+      "B6. Data security",
+      "B7. Accountability",
+      "C1. Data collection clause",
+      "C2. Data processing clause",
+      "C3. User rights clause",
+      "D1. Breach notification",
+      "D2. Cross-border data transfer compliance"
+    ],
+    "codes": [
+      "A1",
+      "A2",
+      "A3",
+      "A4",
+      "A5",
+      "B1",
+      "B2",
+      "B3",
+      "B4",
+      "B5",
+      "B6",
+      "B7",
+      "C1",
+      "C2",
+      "C3",
+      "D1",
+      "D2"
+    ]
+  },
+  "parameters": {
+    "generation": {
+      "max_new_tokens": 800,
+      "temperature": 0.1,
+      "top_p": 0.95,
+      "repetition_penalty": 1.15,
+      "do_sample": true,
+      "seed_base": 1234
+    },
+    "retry": {
+      "max_attempts": 3,
+      "base_delay_seconds": 0,
+      "backoff_factor": 2.0,
+      "max_delay_seconds": 0,
+      "jitter_seconds": 0
+    },
+    "prompt": {
+      "path": "/home/claude/pdpl-eval/prompts/full_policy_rag.txt",
+      "sha256": "473a31672c236089442a25e1cdeb586b50e05bb7464a5d7c8ac432c89c62979a"
+    },
+    "model_prompt_template": null,
+    "parser": "code-anchored regex parse_llm_response (notebook cell 10); fallback = last N isolated 0/1 values; else status parse_failed",
+    "seed": 2234,
+    "retrieval": {
+      "embedding_model": "mock/hash-embedding",
+      "embedding_max_length": 512,
+      "chunking": "docx_heading_sections",
+      "corpus_path": "data/demo/DemoPDPL.docx",
+      "top_k_full": 3,
+      "full_context_separator": "\n\n",
+      "query": "rubric text (all items)"
+    }
+  },
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-6.18.44-fc-v70-x86_64-with-glibc2.39",
+    "packages": {
+      "torch": null,
+      "transformers": null,
+      "accelerate": null,
+      "huggingface_hub": null,
+      "bitsandbytes": null,
+      "langchain": null,
+      "langchain-community": "0.4.2",
+      "langchain-text-splitters": "1.1.3",
+      "faiss-cpu": "1.15.1",
+      "python-docx": "1.2.0",
+      "numpy": "2.4.4",
+      "PyYAML": "6.0.3",
+      "scikit-learn": "1.8.0",
+      "pandas": "3.0.2",
+      "openpyxl": "3.1.5"
+    },
+    "cuda_available": null,
+    "gpu": null
+  },
+  "seed": 2234,
+  "retrieval": {
+    "query_chars": 461,
+    "top_k": 3,
+    "context_separator": "\n\n",
+    "retrieved": [
+      {
+        "rank": 1,
+        "title": "Article 4 - Rights of the Data Subject",
+        "score_l2_distance": 0.8158934116363525,
+        "text": "The data subject has the right to be informed, to access, to request correction and to request destruction of personal data."
+      },
+      {
+        "rank": 2,
+        "title": "Article 10 - Collection",
+        "score_l2_distance": 0.9672044515609741,
+        "text": "Collection shall be limited to the minimum data necessary for the stated purpose."
+      },
+      {
+        "rank": 3,
+        "title": "Article 19 - Security",
+        "score_l2_distance": 1.1439919471740723,
+        "text": "The controller shall take organisational, administrative and technical measures to protect personal data."
+      }
+    ],
+    "context_chars": 314,
+    "index": {
+      "corpus_path": "/home/claude/pdpl-eval/data/demo/DemoPDPL.docx",
+      "corpus_sha256": "3487da3d8ef4aac3d473b984983581e8fd2f1a7f13b74f3a95de2b88eac4ab8b",
+      "embedding_model": "mock/hash-embedding",
+      "embedding_max_length": 512,
+      "chunking": "docx_heading_sections",
+      "n_chunks": 6,
+      "n_chunks_truncated_by_embedder": 0,
+      "vector_store": "FAISS (langchain_community, default IndexFlatL2)"
+    }
+  },
+  "prompt": "You are a legal compliance assistant evaluating a privacy policy against Saudi PDPL requirements.\n\nPDPL Law Excerpts (Implementing Regulation):\nThe data subject has the right to be informed, to access, to request correction and to request destruction of personal data.\n\nCollection shall be limited to the minimum data necessary for the stated purpose.\n\nThe controller shall take organisational, administrative and technical measures to protect personal data.\n\nPolicy:\nSection 1: Introduction to this policy\n This privacy policy explains how we collect and use your personal data.\nSection 2: Your rights\n You may access, correct or delete your data by contacting us. You can object to processing.\nSection 3: الأمان\n نحن نتخذ إجراءات تقنية لحماية بياناتك الشخصية.\nSection 4: Retention\n We keep data only as long as necessary for the purposes described.\n\nRubric:\nA1. Right to access data\nA2. Right to correct or update data\nA3. Right to delete data\nA4. Right to object to processing\nA5. Right to restrict processing\nB1. Lawfulness, fairness, and transparency\nB2. Purpose limitation\nB3. Data minimization\nB4. Storage limitation\nB5. Data accuracy\nB6. Data security\nB7. Accountability\nC1. Data collection clause\nC2. Data processing clause\nC3. User rights clause\nD1. Breach notification\nD2. Cross-border data transfer compliance\n\nTask: Evaluate if the policy complies with EACH rubric item above according to Saudi PDPL requirements.\n\nInstructions:\n1. For EACH rubric item (A1, A2, etc.), output EXACTLY in this format:\n   [Item Code]: [0 or 1]\n2. Output '1' ONLY if the policy explicitly addresses the requirement\n3. Output '0' if the requirement is missing, unclear, or insufficient\n\nExample format:\nA1: 1\nA2: 0\n\nBegin evaluation:",
+  "token_lengths": {
+    "policy_tokens": 95,
+    "retrieved_context_tokens": 78,
+    "prompt_tokens": 431,
+    "max_new_tokens": 800,
+    "context_limit_tokens": 20000,
+    "token_counter": "model tokenizer (inputs rendered with the model prompt template)",
+    "total_tokens": 1231
+  },
+  "raw_response": "A1: 1\nA2: 0\nA3: 1\nA4: 1\nA5: 0\nB1: 1\nB2: 1\nB3: 0\nB4: 1\nB5: 1\nB6: 1\nB7: 1\nC1: 0\nC2: 1\nC3: 1\nD1: 0\nD2: 1",
+  "attempts": 1,
+  "generation_seconds": 0.0,
+  "prompt_tokens": 431,
+  "context_limit_tokens": 20000,
+  "max_new_tokens": 800,
+  "parse": {
+    "parse_method": "code_anchored",
+    "n_parsed": 17
+  },
+  "status": "success",
+  "prediction": {
+    "A1. Right to access data": 1,
+    "A2. Right to correct or update data": 0,
+    "A3. Right to delete data": 1,
+    "A4. Right to object to processing": 1,
+    "A5. Right to restrict processing": 0,
+    "B1. Lawfulness, fairness, and transparency": 1,
+    "B2. Purpose limitation": 1,
+    "B3. Data minimization": 0,
+    "B4. Storage limitation": 1,
+    "B5. Data accuracy": 1,
+    "B6. Data security": 1,
+    "B7. Accountability": 1,
+    "C1. Data collection clause": 0,
+    "C2. Data processing clause": 1,
+    "C3. User rights clause": 1,
+    "D1. Breach notification": 0,
+    "D2. Cross-border data transfer compliance": 1
+  },
+  "error": null,
+  "started_at": "2026-10-06T09:44:22+00:00",
+  "finished_at": "2026-10-06T09:44:22+00:00",
+  "runtime_seconds": 0.009,
+  "integrity": {
+    "algorithm": "sha256-canonical-json",
+    "sha256": "d217b4a222d9c2aab5f9061855be3394f332e3125ee90572a9ae8fb48269b7ec"
+  }
+}
