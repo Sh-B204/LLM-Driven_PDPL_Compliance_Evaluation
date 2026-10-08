@@ -16,6 +16,8 @@ Instructions:
    [Item Code]: [0 or 1]
 2. Output '1' ONLY if the policy explicitly addresses the requirement
 3. Output '0' if the requirement is missing, unclear, or insufficient
+4. Do not write Arabic in your response. Output English codes and numbers only.
+5. You MUST output every item in the supplied rubric, exactly once, using its criterion code.
 
 Example format:
 A1: 1

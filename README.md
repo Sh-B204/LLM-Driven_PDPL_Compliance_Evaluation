@@ -1,116 +1,131 @@
-# PDPL disclosure evaluation pipeline
+# LLM-Driven PDPL Disclosure Evaluation
 
-Reproducible, resumable pipeline that asks local open-weight LLMs whether privacy policies of Saudi fintech applications **disclose** the
-17 observable, PDPL-aligned items of a rubric (data-subject rights A1–A5, processing principles B1–B7, policy clauses C1–C3, operational
-obligations D1–D2). It was refactored from the notebook `notebooks/PDPL_Evaluate_with_Arabic.ipynb`.
+Evaluate processed privacy policies against 15 rubric criteria using ALLaM-7B, LLaMA-3.1-8B, Qwen-2.5-7B and Mistral-7B. A prediction of **1** means the criterion is disclosed; **0** means missing, unclear or insufficient disclosure. These predictions assess policy text and do not establish legal compliance in practice.
 
-> **Scope.** The task evaluates whether a policy's text *contains observable PDPL-aligned disclosures*. A `1` means the model judged the
-> requirement to be explicitly addressed in the policy text; a `0` means missing, unclear, or insufficient. This is **not** a determination of
-> legal compliance, and the outputs of 7–8B models must not be used as a compliance verdict.
+The four strategies are `section_rag`, `full_rag`, `section_norag` and `full_norag`. Each uses five repetitions. Section strategies retrieve law excerpts per section when RAG is enabled; full-policy RAG retrieves excerpts using the rubric as the query.
 
-## Strategies
+The intended dataset contains **21 applications**; two processed policies remain to be added. Execution uses only the applications listed in `configs/applications.yaml`. With 21 configured applications, the full matrix contains 1,680 run records and 25,200 final criterion predictions. Each application produces 20 records per model, or 80 across four models. Section strategies make multiple generation calls within each record.
 
-Every application × model is run under four strategies (ids are fixed and used in file names and records):
+## Repository contents
 
-| id | Description | Notebook origin |
-|---|---|---|
-| `section_rag` | Each policy section is evaluated separately; the 3 most similar PDPL chunks (multilingual-e5-small + FAISS, query = section text) are added to the prompt; per-section 0/1 vectors are combined with **OR** | baseline "Section-by-Section (OR)" |
-| `full_rag` | Whole policy in one prompt plus the top-3 PDPL chunks retrieved with the rubric text as query | Experiment 1 "Full-Policy+Law" |
-| `section_norag` | As `section_rag` but without the PDPL excerpts | **new** |
-| `full_norag` | Whole policy in one prompt, no PDPL text | baseline "Full-Policy" |
-
-Each (application, model, strategy) is run **5 times** (`runs: 5`). With the shipped configuration: 19 apps × 4 models × 4 strategies × 5 runs = **1,520 runs**.
-Models (unchanged): ALLaM-7B, LLaMA-3.1-8B, Qwen-2.5-7B, Mistral-7B (local GPU, fp16, `device_map=auto`).
-
-Section-based runs store **every section's prompt, retrieval, raw response and 17-value vector**, so OR / AND / majority / threshold aggregation
-(`src/pdpl_eval/aggregation.py`) can be recomputed later without re-running any model. The saved final prediction uses OR (the notebook's rule).
-
-## Installation
-
-```bash
-python -m venv .venv && source .venv/bin/activate        # Windows: .venv\Scripts\activate
-pip install torch==2.8.0+cu126 torchvision --index-url https://download.pytorch.org/whl/cu126   # as in the notebook; adapt to your CUDA
-pip install -r requirements.txt
-cp .env.example .env        # put your Hugging Face token in .env, then:  set -a; source .env; set +a
-```
-Gated models (Llama-3.1) need accepted licence terms. Optional pre-download: `python scripts/download_models.py`.
-A CUDA GPU with enough VRAM for a 7–8B fp16 model (~16 GB+) is needed for real runs. Mock runs need no GPU.
-
-## Data placement
-See `data/README.md`. In short: policy DOCX files in `data/policies/`, `IRPDPL.docx` in `data/pdpl/`. Nothing private is shipped and both folders are git-ignored.
-
-## Configuration (`configs/`)
-| File | Controls |
+| Path | Purpose |
 |---|---|
-| `applications.yaml` | application name, id, policy path (19 apps) |
-| `models.yaml` | model ids/labels, HF id, revision, cache dir, dtype, prompt template, optional `context_limit_tokens` |
-| `experiment.yaml` | `runs`, enabled strategies and their prompt paths, rubric path, RAG (corpus, embedding model, top-k, separators), generation (`max_new_tokens`, `temperature`, `top_p`, `repetition_penalty`, `do_sample`, `seed_base`), retry/backoff, output dir |
-| `demo/` | mock models + synthetic data for `--mock` |
+| `configs/` | Application paths, model settings and experiment settings |
+| `data/policies/` | Processed policy DOCX files |
+| `data/pdpl/IRPDPL.docx` | Implementing Regulations retrieval corpus |
+| `data/ground_truth/PDPL_Results.xlsx` | Expert labels, on the `Expert Analysis` sheet |
+| `rubric/rubric_items.txt` | The 15 evaluation criteria |
+| `prompts/` | Four strategy templates; `section.txt` is the section prompt without RAG |
+| `src/pdpl_eval/` | Policy loading, inference, retrieval, parsing, saving and evaluation |
+| `scripts/` | Experiment entry point, pilot checks, validation and consolidation |
+| `.env.example` | Access-token placeholder; no real token belongs in Git |
 
-Prompts live in `prompts/`, the rubric in `rubric/rubric_items.txt`. Nothing about applications, paths or models is hard-coded in `src/`.
+The original notebook and development tests are maintained separately. They are not required to execute this repository.
 
-## Tests (run these first)
-```bash
-python scripts/run_smoke_test.py                     # 1 app, 1 model, full_norag, 1 run: load → prompt → response → parse → save → validate → resume detection
-python scripts/run_full_policy_rag_test.py           # longest policy, 1 model, full_rag, 1 run; prints policy / retrieved-context / prompt / total token lengths
-python scripts/run_smoke_test.py --mock              # plumbing check without GPU / data
-python scripts/run_full_policy_rag_test.py --mock
-python -m pytest -q tests                            # unit + mock end-to-end tests (no GPU needed)
-```
-Both test scripts write to `results/smoke_test/<timestamp>/` and `results/full_policy_rag_test/<timestamp>/`, never into the main results.
-The full-policy+RAG test checks the model's context limit **before loading weights**. If `prompt tokens + max_new_tokens` exceeds the limit it stops
-(exit code 3), writes `preflight_report.json` explaining why, and sends nothing. **Content is never truncated.**
-Choose another app/model with `--app` / `--model`.
+## Installation and local checks
 
-## Full execution
-```bash
-python scripts/run_experiments.py --dry-run                      # show the plan
-python scripts/run_experiments.py --resume                       # run everything (safe to interrupt and re-run)
-python scripts/run_experiments.py --app circlys --model qwen-2.5-7b --strategy full_rag --runs 2     # filters (repeat flags to select several)
-python scripts/run_experiments.py --strategy section_rag --strategy full_rag --run-numbers 4 5
-python scripts/run_experiments.py --force --app circlys --strategy full_norag --run-numbers 3        # redo a completed run (old file archived)
-```
-Order: for each model (loaded once, released afterwards) → each application → each enabled strategy → each run. After every run the record is written
-atomically (temp file + `fsync` + `os.replace`), re-read from disk, and validated (schema, SHA-256 integrity, rubric keys, aggregation consistency) before continuing.
-
-### Resume behaviour
-* A run is *complete* only if its file exists, is valid, and has `status: success`. Such runs are skipped (`--resume` is the default behaviour; the flag is accepted for clarity).
-* Missing, `failed`, `parse_failed`, or corrupt files are re-run. The previous file is **moved to `results/archive/`**, never silently overwritten or deleted. `--force` does the same for valid runs.
-* An interruption (Ctrl-C, crash, power loss) can lose at most the run in progress; saved files are never half-written.
-* Temporary errors (OOM, I/O, …) are retried with exponential backoff (`retry:` in config). Non-retryable errors (context limit) and exhausted retries are recorded as `failed` and the pipeline continues.
-* Missing policy file / unreachable model / retriever: those runs are *blocked* (not attempted, listed in the report), the rest continue.
-
-## Outputs
-```
-results/raw/<app_id>/<model_id>/<strategy>/run_01.json   one self-contained record per run
-results/archive/...                                        superseded records
-results/logs/run_experiments_<ts>.log, events.jsonl        console log + append-only audit trail
-results/logs/completion_report_<ts>.{json,md}               completed / failed / parse_failed / invalid / missing (+ skipped & blocked this invocation)
-results/consolidated/all_predictions.{jsonl,csv}            long format: one row per run × rubric criterion (successful runs)
-results/consolidated/all_section_predictions.{jsonl,csv}    one row per section × criterion × run
-results/consolidated/all_runs.csv                           one row per run incl. failures, runtimes, error info
-```
-Each raw record contains: application, model (id, HF id, requested and resolved revision, dtype), strategy, run, status (`success` / `failed` / `parse_failed`),
-error (type, message, attempts), start/end timestamps and runtime, all generation/retrieval/retry parameters, prompt file and SHA-256, rubric items and SHA-256,
-policy path and SHA-256, parser rule, aggregation rule, seed(s), raw response(s), parsed prediction(s), retrieval details (retrieved chunks, titles, distances, corpus SHA-256,
-embedding model, chunking rule, top-k), token lengths (full-policy strategies), and the environment (Python, platform, GPU, package versions). Example: `docs/sample_results/` (mock data).
+Run commands from the repository root. Use Python 3.11 or 3.12. Install a PyTorch build suitable for the execution computer, then install the remaining dependencies:
 
 ```bash
-python scripts/validate_results.py            # validates every file + prints completion matrix; exit 1 if invalid/incomplete (--missing-ok to ignore incomplete)
-python scripts/consolidate_results.py         # writes results/consolidated/*
+python -m pip install -r requirements.txt
+python -m compileall -q src scripts
+python scripts/run_experiments.py --check-inputs
 ```
 
-## Reproducibility and security
-* Secrets only through environment variables (`HF_TOKEN`); `.env` is git-ignored; no keys are in the repository. The original notebook had a hard-coded token that was redacted in `notebooks/` — revoke it.
-* `.gitignore` excludes policies, PDPL text, ground truth, model weights, environments, caches and generated results.
-* Pin `revision:` per model in `configs/models.yaml` for strict reproducibility; resolved hashes are recorded anyway.
+The input check imports the package and validates configured policies, law text, labels and prompt rendering. It does not download model weights or generate predictions. Passing it does not verify GPU execution.
 
-## Limitations
-* No real-model run was possible while building this repository; only the mock path and notebook-fidelity tests were executed (see `docs/assumptions_and_missing_information.md`).
-* Outputs are LLM judgements on disclosure text, not legal findings; the notebook's own analysis found systematic over-estimation.
-* Long policies may exceed a model's usable context; such runs are recorded as failed rather than truncated.
-* The E5 embedder truncates inputs at 512 tokens (as in the notebook); counts are recorded.
-* No multi-process locking; run one writer per results directory.
-* Metrics, plots and cross-app statistics are intentionally not part of this repository yet (`src/pdpl_eval/evaluation.py` preserves the notebook's metric code).
+The full dataset requires a GPU capable of running the configured language models and the embedding model. Language models load sequentially: one model processes all selected applications, strategies and repetitions, then unloads before the next. Weights remain cached on disk; they are not all downloaded in advance or automatically deleted.
 
-More: `docs/notebook_to_repository_mapping.md`, `docs/behavior_changes.md`, `docs/assumptions_and_missing_information.md`.
+## Model access and frozen revisions
+
+The GPU operator should use their own Hugging Face account and access token, with any required model access approved. Set `HF_TOKEN` in the process environment. Creating a `.env` file alone does not load it.
+
+Windows Command Prompt:
+
+```bat
+set "HF_TOKEN=YOUR_PRIVATE_TOKEN"
+```
+
+Linux or Colab shell:
+
+```bash
+export HF_TOKEN="YOUR_PRIVATE_TOKEN"
+```
+
+Keep the actual token private. Commit only the placeholder in `.env.example`.
+
+Before real execution, freeze the language-model and embedding-model revisions:
+
+```bash
+python scripts/run_experiments.py --pin-revisions
+python scripts/run_experiments.py --dry-run
+```
+
+Pinning retrieves version metadata rather than model weights. Keep the resulting configurations with the saved experiment results.
+
+## Pilot, review and full experiment
+
+First check full-policy RAG on the pilot application:
+
+```bash
+python scripts/run_full_policy_rag_test.py --app circlys --model allam-7b
+```
+
+This measures prompt length before loading the language-model weights, then executes one `full_rag` run if the request fits. The check does load the embedding model. Requests exceeding the language-model context limit stop without policy truncation.
+
+Then run the pilot:
+
+```bash
+python scripts/run_smoke_test.py --app circlys
+```
+
+The updated pilot runs **one application, all four configured models, all four strategies and one repetition**: 16 run records. It reuses matching successful results from the earlier RAG check. It saves the results and stops; it never launches the full experiment automatically.
+
+The operator sends the entire `results/` folder for review. Inspect predictions, raw responses and retrieved excerpts against the policy and rubric. A successful structural check does not establish prediction accuracy.
+
+Only after review, start the full matrix separately:
+
+```bash
+python scripts/run_experiments.py --resume
+python scripts/validate_results.py
+python scripts/consolidate_results.py --evaluate
+```
+
+Successful pilot records are reused as repetition 1 when their inputs, inference code, settings and frozen revisions match. Use the same results directory. Changes that affect those fingerprints invalidate reuse; complete the code and prompt adjustments before the pilot.
+
+After the temporary pilot scripts are removed, the main entry point can run the same pilot:
+
+```bash
+python scripts/run_experiments.py --app circlys --runs 1
+```
+
+For incomplete diagnostic analysis, use `python scripts/consolidate_results.py --evaluate --allow-partial`. The analysis reports incomplete coverage and does not label it as the completed final experiment.
+
+## Saved outputs
+
+| Path | Contents |
+|---|---|
+| `results/raw/<app>/<model>/<strategy>/run_01.json` through `run_05.json` | Individual run records |
+| `results/logs/` | Execution logs, events and completion reports |
+| `results/archive/` | Previous records when a result is replaced |
+| `results/preflight/` | Full-RAG context checks |
+| `results/consolidated/` | Combined predictions and run summaries in CSV/JSONL |
+| `results/analysis/` | Evaluation tables and the false-positive heatmap in PNG/PDF |
+
+Raw records retain prompts, responses, predictions, timestamps, runtime, settings, seeds, revisions, input hashes and environment details. RAG records retain retrieved excerpts and retrieval settings. Section records retain individual section predictions.
+
+Incomplete parsing is recorded as `parse_failed`; missing predictions are not converted to zeros. Full-policy inputs are not silently truncated. The embedding model truncates embedding inputs at its configured token limit, and affected corpus chunk counts are recorded.
+
+Keep and back up the complete `results/` folder, the expert-label workbook, inputs, configurations and exact code version. Generated outputs are excluded from Git. Later figures and alternative section aggregations can be calculated from saved results without rerunning the models.
+
+## Evaluation
+
+Evaluation is invoked explicitly with `consolidate_results.py --evaluate`; the inference runner does not invoke it automatically.
+
+`main_table.csv` summarizes each model/strategy over complete repetitions, with metric means and sample standard deviations. Each repetition evaluates all configured applications together. Separate tables report each rubric criterion, criterion-macro performance, confusion counts, strategy contrasts and prediction stability. Undefined metrics remain blank.
+
+OR is the primary aggregation for section strategies. Evaluation also compares **AND, strict majority and at least two positive sections**, using saved section predictions. These comparisons do not require new model inference and do not apply to full-policy strategies.
+
+Additional outputs include application-cluster bootstrap confidence intervals, false-positive cases, descriptive paired-strategy and FP/FN tests, constant baselines and one false-positive heatmap. The exact item-level tests assume independent decisions; results should be interpreted alongside the application-cluster intervals. Additional figures can be built later from the saved records and tables.
+
+Optional reviewed keyword patterns and independent annotator workbooks can be configured for baseline and expert-agreement analysis. The main workbook percentage column is not read: evaluation uses the individual binary criterion labels instead.

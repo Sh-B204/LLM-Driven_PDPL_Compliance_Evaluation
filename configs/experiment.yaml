@@ -1,17 +1,8 @@
-# Experiment settings. Nothing here is hard-coded in the evaluation code.
-# Parameter values marked [notebook] are the notebook's baseline values.
-
-runs: 5                                  # runs per application x model x strategy
+runs: 5
 applications_file: "configs/applications.yaml"
 models_file: "configs/models.yaml"
+rubric_path: "rubric/rubric_items.txt"   
 
-rubric_path: "rubric/rubric_items.txt"   # [notebook] 17 items A1..D2, joined with "\n"
-
-# Strategy names are fixed identifiers used in file paths and result records.
-#   section_rag    = notebook baseline "Section-by-Section (OR)"
-#   full_norag     = notebook baseline "Full-Policy"
-#   full_rag       = notebook Experiment 1 "Full-Policy+Law"
-#   section_norag  = NEW (no notebook equivalent): section prompt without the PDPL excerpts block
 strategies:
   section_rag:
     enabled: true
@@ -28,7 +19,7 @@ strategies:
     enabled: true
     unit: "section"
     rag: false
-    prompt_path: "prompts/section_no_rag.txt"
+    prompt_path: "prompts/section.txt"
     aggregation: "or"
   full_norag:
     enabled: true
@@ -37,23 +28,23 @@ strategies:
     prompt_path: "prompts/full_policy.txt"
 
 retrieval:
-  corpus_path: "data/pdpl/IRPDPL.docx"             # [notebook] PDPL_DOCX_PATH = "IRPDPL.docx"
-  embedding_model: "intfloat/multilingual-e5-small" # [notebook]
-  embedding_max_length: 512                         # [notebook] (query/passage truncation inside the embedder)
-  embedding_device: null                            # null => cuda if available else cpu, as in the notebook
-  chunking: "docx_heading_sections"                 # [notebook] one chunk per Heading-delimited section
-  top_k_section: 3                                  # [notebook] retriever k=3, query = section content
-  top_k_full: 3                                     # [notebook, Exp1] retriever k=3, query = rubric text
-  section_context_separator: "\n"                   # [notebook] "\n".join(page_content)
-  full_context_separator: "\n\n"                    # [notebook, Exp1] "\n\n".join(page_content)
+  corpus_path: "data/pdpl/IRPDPL.docx"
+  embedding_model: "intfloat/multilingual-e5-small"
+  embedding_max_length: 512
+  embedding_device: null
+  chunking: "docx_heading_sections" 
+  top_k_section: 3 
+  top_k_full: 3 
+  section_context_separator: "\n"
+  full_context_separator: "\n\n"
 
 generation:
-  max_new_tokens: 800                               # [notebook]
-  temperature: 0.1                                  # [notebook]
-  top_p: 0.95                                       # [notebook]
-  repetition_penalty: 1.15                          # [notebook]
-  do_sample: true                                   # [notebook]
-  seed_base: 1234                                   # NEW: seed for run r is seed_base + r (notebook was unseeded)
+  max_new_tokens: 800 
+  temperature: 0.1 
+  top_p: 0.95
+  repetition_penalty: 1.15
+  do_sample: true 
+  seed_base: 1234 
 
 retry:
   max_attempts: 3
@@ -66,7 +57,11 @@ output:
   results_dir: "results"
   hf_token_env: "HF_TOKEN"
 
-# Optional, used only by src/pdpl_eval/evaluation.py (preserved notebook metrics; not run by the pipeline)
 ground_truth:
-  xlsx_path: "data/ground_truth/PDPL Results.xlsx"
+  xlsx_path: "data/ground_truth/PDPL_Results.xlsx"
   sheet_name: "Expert Analysis"
+
+analysis:
+  bootstrap_samples: 2000
+  bootstrap_seed: 2026
+  keyword_patterns_path: null  

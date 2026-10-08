@@ -1,10 +1,9 @@
-#!/usr/bin/env python3
 """Validate every saved run record (schema, integrity hash, rubric keys, aggregation consistency, path identity)
 and print a completion summary for the configured matrix.  Exit code 1 if anything is invalid."""
+
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
-
 import argparse
 
 from pdpl_eval.cli import add_common_args, fail, load_cfg_and_selection
@@ -30,7 +29,7 @@ def main():
     for bad in tree["invalid"][:50]:
         print("  INVALID", bad["path"], "->", "; ".join(bad["problems"]))
     print("Matrix:", rep["expected_runs"], "expected |", rep["counts"])
-    bad = tree["invalid"] or tree["stray_tmp"] or tree["duplicates"]
+    bad = tree["invalid"] or tree["stray_tmp"] or tree["duplicates"] or rep["counts"]["invalid"]
     incomplete = rep["counts"]["completed"] != rep["expected_runs"]
     return 1 if bad or (incomplete and not args.missing_ok) else 0
 

@@ -13,14 +13,7 @@ __pycache__/
 *.egg-info/
 # model weights
 models/
-# private / large inputs
-data/policies/*
-!data/policies/.gitkeep
-data/pdpl/*
-!data/pdpl/.gitkeep
-data/ground_truth/
-*.xlsx
-# generated results (kept: folder skeleton + docs/sample_results)
+# generated results
 results/raw/*
 !results/raw/.gitkeep
 results/consolidated/*
@@ -30,8 +23,16 @@ results/logs/*
 results/archive/
 results/smoke_test/
 results/full_policy_rag_test/
-results/_demo/
 # OS / editor
 .DS_Store
 .vscode/
 .idea/
+
+results/analysis/
+results/preflight/
+results/preflight_report*.json
+
+# private development material
+tests/
+docs/
+notebooks/

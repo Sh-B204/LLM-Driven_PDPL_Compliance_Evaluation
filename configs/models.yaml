@@ -1,10 +1,3 @@
-# Models evaluated: exactly the four in the notebook's MODEL_CONFIGS.
-# (The notebook's markdown header also mentions Gemma-7B, but it has no loader/runner,
-#  so it is not part of the executed model set.)
-# 'label' is the notebook's model label and is what appears in result records.
-# 'id' is a filesystem-safe identifier used in results/raw/<app>/<model>/...
-# revision: null  => latest snapshot, as in the notebook. The resolved commit hash is
-#                    recorded in every result. Pin a commit hash here for strict reproducibility.
 models:
   - id: "allam-7b"
     label: "ALLaM-7B"
@@ -16,8 +9,8 @@ models:
     trust_remote_code: true
     torch_dtype: "float16"
     device_map: "auto"
-    prompt_template: "<s>[INST] {prompt} [/INST]"   # notebook: run_plain(tok, mdl, f"<s>[INST] {p} [/INST]")
-    context_limit_tokens: null                      # null => read from the model config
+    prompt_template: "<s>[INST] {prompt} [/INST]"  
+    context_limit_tokens: null
 
   - id: "llama-3.1-8b"
     label: "LLaMA-3.1-8B"
@@ -29,7 +22,7 @@ models:
     trust_remote_code: true
     torch_dtype: "float16"
     device_map: "auto"
-    prompt_template: null                           # raw prompt, as in the notebook
+    prompt_template: null
     context_limit_tokens: null
 
   - id: "qwen-2.5-7b"

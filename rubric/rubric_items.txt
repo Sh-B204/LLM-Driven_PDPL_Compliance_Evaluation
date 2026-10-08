@@ -1,8 +1,6 @@
 A1. Right to access data
 A2. Right to correct or update data
 A3. Right to delete data
-A4. Right to object to processing
-A5. Right to restrict processing
 B1. Lawfulness, fairness, and transparency
 B2. Purpose limitation
 B3. Data minimization

@@ -1,6 +1,4 @@
-# Applications evaluated (19, in the notebook's order).
-# Policy files are NOT shipped; place them under data/policies/ (see data/README.md).
-# Notebook original path pattern: 'user pp/preprocessed/<Name>.docx'
+# Applications evaluated
 applications:
   - name: "Circlys"
     id: "circlys"
