@@ -1,6 +1,5 @@
 from __future__ import annotations
 import time
-import shutil
 import re
 from dataclasses import asdict
 from pathlib import Path
@@ -29,17 +28,6 @@ PARSER_RULES = {
 }
 
 
-def delete_model_cache(spec):
-    """Delete only this language model's downloaded Hugging Face cache."""
-    if not spec.cache_dir:
-        raise ValueError(f"Set a dedicated cache_dir for {spec.id} before cleanup")
-    cache = Path(spec.cache_dir).resolve()
-    folder = cache / ("models--" + spec.hf_id.replace("/", "--"))
-    if folder.is_symlink():
-        raise ValueError(f"Refusing to delete a linked cache: {folder}")
-    if folder.exists():
-        shutil.rmtree(folder)
-        log.info("Model %s disk cache deleted: %s", spec.id, folder)
 
 
 def experiment_fingerprint(cfg, app, model_spec, spec, rubric, template):
@@ -200,7 +188,6 @@ def run_experiments(cfg: Config, sel: Selection, force: bool = False, dry_run: b
                     model.unload()
                 except Exception:
                     pass
-                delete_model_cache(model_spec)
                 continue
             try:
                 model_info = model.info()
@@ -249,7 +236,6 @@ def run_experiments(cfg: Config, sel: Selection, force: bool = False, dry_run: b
             finally:
                 model.unload()
                 log.info("Model %s unloaded", model_spec.id)
-                delete_model_cache(model_spec)
     except KeyboardInterrupt:
         summary["interrupted"] = True
         log.warning("Interrupted. Completed runs are saved; re-run the same command to resume.")
