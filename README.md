@@ -1,6 +1,6 @@
 # LLM-Driven PDPL Disclosure Evaluation
 
-Evaluate privacy-policy disclosures against 15 rubric criteria using ALLaM-7B, LLaMA-3.1-8B, Qwen-2.5-7B and Mistral-7B. Predictions indicate disclosed (1) or missing, unclear or insufficient disclosure (0), rather than legal compliance in practice.
+Evaluate privacy-policy disclosures against 15 rubric criteria using ALLaM-7B, LLaMA-3.1-8B, Qwen-2.5-7B and Mistral-7B. Predictions indicate disclosed (1) or missing, unclear or insufficient disclosure (0).
 
 Four strategies are evaluated over five repetitions: `section_rag`, `full_rag`, `section_norag` and `full_norag`. The intended dataset contains 21 applications; execution follows `configs/applications.yaml`.
 
