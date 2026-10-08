@@ -80,7 +80,7 @@ def run_section_strategy(spec: StrategySpec, ctx: RunContext, run: int) -> dict:
             entry["prompt"] = prompt
             g = _generate(ctx, prompt, seed)
             entry.update(g)
-            vec, meta = parse_section_vector(g["raw_response"], n_items)
+            vec, meta = parse_section_vector(g["raw_response"], rub.items)
             entry["parsed_vector"] = vec
             entry["parse"] = meta
             if vec is None:

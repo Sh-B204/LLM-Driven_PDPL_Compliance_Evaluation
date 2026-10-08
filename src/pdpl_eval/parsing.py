@@ -4,52 +4,35 @@ from typing import Dict, List, Optional, Tuple
 
 
 def parse_llm_response(text: str, rubric_items: List[str]) -> Dict[str, Optional[int]]:
-    """parse_llm_response Code-anchored extraction first; falls back to first isolated 0/1 on a line mentioning the code.
-    """
+    """Extract one binary answer per criterion code; reject duplicate or invalid answers."""
     predictions: Dict[str, Optional[int]] = {}
-    lines = text.strip().split("\n")
-    for item in rubric_items:
-        code = item.split(". ")[0]
-        predictions[item] = None
-        for line in lines:
-            if not re.search(rf"(?<![A-Za-z0-9]){re.escape(code)}(?![A-Za-z0-9])", line, re.IGNORECASE):
+    codes = [item.split(". ")[0] for item in rubric_items]
+    pattern = r"(?<![A-Za-z0-9])(" + "|".join(re.escape(code) for code in codes) + r")(?![A-Za-z0-9])"
+    matches = list(re.finditer(pattern, text, re.IGNORECASE))
+    for item, code in zip(rubric_items, codes):
+        answers = []
+        for i, match in enumerate(matches):
+            if match.group(1).upper() != code.upper():
                 continue
-            m = re.search(
-                rf"(?<![A-Za-z0-9]){re.escape(code)}(?![A-Za-z0-9])[^\n]*?\b([01])\b",
-                line, re.IGNORECASE,
-            )
-            if m:
-                predictions[item] = int(m.group(1))
-                break
-            m2 = re.search(r"\b([01])\b", line)
-            if m2:
-                predictions[item] = int(m2.group(1))
-                break
+            end = matches[i + 1].start() if i + 1 < len(matches) else len(text)
+            line = text[match.end():end].split("\n")[0].strip()
+            value = re.match(r"^(?:[:=\-]\s*|\.\s*[^\n]*?\s[-:=]\s*)([01])(?![\w.])", line)
+            answers.append(int(value.group(1)) if value else None)
+        predictions[item] = answers[0] if len(answers) == 1 else None
     return predictions
 
 
-def parse_section_vector(raw: str, n_items: int) -> Tuple[Optional[List[int]], dict]:
-    """line-based extraction; require exactly n_items values, without padding or truncation."""
-    vals: List[int] = []
-    for line in raw.splitlines():
-        match = re.search(r"\b([01])\b", line)
-        if match:
-            vals.append(int(match.group(1)))
-    meta = {"n_values_found": len(vals), "expected": n_items, "padded_zeros": 0, "truncated_values": 0}
-    return (vals if len(vals) == n_items else None), meta
+def parse_section_vector(raw: str, rubric_items: List[str]) -> Tuple[Optional[List[int]], dict]:
+    """Return predictions in rubric order, without padding or truncation."""
+    predictions, meta = parse_full_response(raw, rubric_items)
+    meta.update({"n_values_found": meta["n_parsed"], "padded_zeros": 0, "truncated_values": 0})
+    return ([predictions[item] for item in rubric_items] if predictions is not None else None), meta
 
 
 def parse_full_response(raw: str, rubric_items: List[str]) -> Tuple[Optional[Dict[str, Optional[int]]], dict]:
-    """code-anchored extraction; accept only complete predictions or an exact-length fallback."""
-    n = len(rubric_items)
-    preds = parse_llm_response(raw, rubric_items)
-    parsed_count = sum(1 for v in preds.values() if v is not None)
-    if parsed_count > 0:
-        missing = [item.split(". ")[0] for item, value in preds.items() if value is None]
-        return (preds if parsed_count == n else None), {"parse_method": "code_anchored", "n_parsed": parsed_count,
-                                                       "expected": n, "missing_codes": missing, "partial_predictions": preds}
-    vals = [int(m.group(1)) for line in raw.splitlines() if (m := re.search(r"\b([01])\b", line))]
-    if len(vals) == n:
-        return ({item: vals[i] for i, item in enumerate(rubric_items)},
-                {"parse_method": "fallback_exact_n_values", "n_parsed": n, "n_values_found": len(vals), "expected": n})
-    return None, {"parse_method": "unparsed", "n_parsed": 0, "n_values_found": len(vals), "expected": n}
+    """Accept only one valid binary answer for every supplied criterion."""
+    predictions = parse_llm_response(raw, rubric_items)
+    missing = [item.split(". ")[0] for item, value in predictions.items() if value is None]
+    meta = {"parse_method": "code_anchored", "n_parsed": len(rubric_items) - len(missing),
+            "expected": len(rubric_items), "missing_or_invalid_codes": missing, "partial_predictions": predictions}
+    return (predictions if not missing else None), meta
