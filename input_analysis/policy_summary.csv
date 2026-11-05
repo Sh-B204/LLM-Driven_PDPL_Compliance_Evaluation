@@ -1,0 +1,22 @@
+app,id,chars,words,n_sections,arabic_letter_share,latin_letter_share,sec_chars_min,sec_chars_median,sec_chars_max
+Circlys,circlys,6018,894,11,0.0,1.0,186,404,967
+Dinar,dinar,8706,1368,13,0.0,1.0,113,311,2466
+Safqah,safqah,3399,517,6,0.0,1.0,276,460,963
+Tarmeez,tarmeez,12097,1838,11,0.0,1.0,274,818,2494
+Tamra Capital,tamra_capital,24672,3819,16,0.0,1.0,153,1406,3482
+Malaa,malaa,24342,3789,26,0.0,1.0,118,659,4113
+Aseel Invest,aseel_invest,9286,1373,10,0.0,1.0,142,554,3668
+Sahm,sahm,15392,2433,11,0.0,1.0,518,813,5154
+Hakbah,hakbah,13877,2041,14,0.0,1.0,297,644,1970
+Dawul,dawul,32749,5339,32,0.0,1.0,105,582,5967
+Sukuk,sukuk,3963,615,11,0.0,1.0,82,281,823
+Awaed,awaed,35692,5476,30,0.996,0.004,139,764,6228
+Abyan,abyan,5598,861,6,0.986,0.014,430,680,2273
+Manafa,manafa,8047,1217,11,0.0,1.0,165,655,1353
+Rakeez,rakeez,16522,2877,14,0.995,0.005,245,801,2443
+Emakn Alarabiya,emakn_alarabiya,15642,2478,15,0.0,1.0,254,666,3438
+Money Loop,money_loop,20877,3515,19,0.999,0.001,171,686,3233
+Ta3meed,ta3meed,10988,1747,13,0.997,0.003,231,672,1882
+Sulfah,sulfah,7402,1169,14,0.995,0.005,186,436,1070
+Drahim,drahim,19441,3197,21,0.997,0.003,130,726,3362
+Mudaraba,mudaraba,6373,997,7,0.999,0.001,248,755,1485

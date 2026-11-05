@@ -1,20 +1,15 @@
+torch
+transformers>=4.44,<5
+huggingface_hub
 PyYAML>=6.0
 python-docx
 numpy
-langchain
 langchain-community
-langchain-classic
-langchain-text-splitters
 faiss-cpu
-transformers>=4.44,<5
 accelerate
-huggingface_hub
-bitsandbytes
 sentencepiece
 protobuf
-# Evaluation and figures:
-scikit-learn
 pandas
 openpyxl
-scipy
 matplotlib
+scipy>=1.9

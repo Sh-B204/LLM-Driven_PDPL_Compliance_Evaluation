@@ -1,0 +1,131 @@
+provenance,app,key,model,strategy,run,unit,rag,status,reason,prompt_tokens
+archived_protocol_1.1.0,Awaed,awaed,allam-7b,full_norag,1,full,False,failed,ContextLimitExceeded,42483.0
+archived_protocol_1.1.0,Awaed,awaed,allam-7b,full_norag,2,full,False,failed,ContextLimitExceeded,42483.0
+archived_protocol_1.1.0,Awaed,awaed,allam-7b,full_norag,3,full,False,failed,ContextLimitExceeded,42483.0
+archived_protocol_1.1.0,Awaed,awaed,allam-7b,full_norag,4,full,False,failed,ContextLimitExceeded,42483.0
+archived_protocol_1.1.0,Awaed,awaed,allam-7b,full_norag,5,full,False,failed,ContextLimitExceeded,42483.0
+archived_protocol_1.1.0,Awaed,awaed,allam-7b,full_rag,1,full,True,failed,ContextLimitExceeded,43269.0
+archived_protocol_1.1.0,Awaed,awaed,allam-7b,full_rag,2,full,True,failed,ContextLimitExceeded,43269.0
+archived_protocol_1.1.0,Awaed,awaed,allam-7b,full_rag,3,full,True,failed,ContextLimitExceeded,43269.0
+archived_protocol_1.1.0,Awaed,awaed,allam-7b,full_rag,4,full,True,failed,ContextLimitExceeded,43269.0
+archived_protocol_1.1.0,Awaed,awaed,allam-7b,full_rag,5,full,True,failed,ContextLimitExceeded,43269.0
+archived_protocol_1.1.0,Awaed,awaed,allam-7b,section_norag,1,section,False,failed,ContextLimitExceeded,
+archived_protocol_1.1.0,Awaed,awaed,allam-7b,section_norag,2,section,False,failed,ContextLimitExceeded,
+archived_protocol_1.1.0,Awaed,awaed,allam-7b,section_norag,3,section,False,failed,ContextLimitExceeded,
+archived_protocol_1.1.0,Awaed,awaed,allam-7b,section_norag,4,section,False,failed,ContextLimitExceeded,
+archived_protocol_1.1.0,Awaed,awaed,allam-7b,section_norag,5,section,False,failed,ContextLimitExceeded,
+archived_protocol_1.1.0,Awaed,awaed,allam-7b,section_rag,1,section,True,failed,ContextLimitExceeded,
+archived_protocol_1.1.0,Awaed,awaed,allam-7b,section_rag,2,section,True,failed,ContextLimitExceeded,
+archived_protocol_1.1.0,Awaed,awaed,allam-7b,section_rag,3,section,True,failed,ContextLimitExceeded,
+archived_protocol_1.1.0,Awaed,awaed,allam-7b,section_rag,4,section,True,failed,ContextLimitExceeded,
+archived_protocol_1.1.0,Awaed,awaed,allam-7b,section_rag,5,section,True,failed,ContextLimitExceeded,
+archived_protocol_1.1.0,Awaed,awaed,mistral-7b,full_norag,1,full,False,failed,ContextLimitExceeded,74022.0
+archived_protocol_1.1.0,Awaed,awaed,mistral-7b,full_norag,2,full,False,failed,ContextLimitExceeded,74022.0
+archived_protocol_1.1.0,Awaed,awaed,mistral-7b,full_norag,3,full,False,failed,ContextLimitExceeded,74022.0
+archived_protocol_1.1.0,Awaed,awaed,mistral-7b,full_norag,4,full,False,failed,ContextLimitExceeded,74022.0
+archived_protocol_1.1.0,Awaed,awaed,mistral-7b,full_norag,5,full,False,failed,ContextLimitExceeded,74022.0
+archived_protocol_1.1.0,Awaed,awaed,mistral-7b,full_rag,1,full,True,failed,ContextLimitExceeded,74815.0
+archived_protocol_1.1.0,Awaed,awaed,mistral-7b,full_rag,2,full,True,failed,ContextLimitExceeded,74815.0
+archived_protocol_1.1.0,Awaed,awaed,mistral-7b,full_rag,3,full,True,failed,ContextLimitExceeded,74815.0
+archived_protocol_1.1.0,Awaed,awaed,mistral-7b,full_rag,4,full,True,failed,ContextLimitExceeded,74815.0
+archived_protocol_1.1.0,Awaed,awaed,mistral-7b,full_rag,5,full,True,failed,ContextLimitExceeded,74815.0
+archived_protocol_1.1.0,Awaed,awaed,qwen-2.5-7b,full_norag,1,full,False,failed,ContextLimitExceeded,32947.0
+archived_protocol_1.1.0,Awaed,awaed,qwen-2.5-7b,full_norag,2,full,False,failed,ContextLimitExceeded,32947.0
+archived_protocol_1.1.0,Awaed,awaed,qwen-2.5-7b,full_norag,3,full,False,failed,ContextLimitExceeded,32947.0
+archived_protocol_1.1.0,Awaed,awaed,qwen-2.5-7b,full_norag,4,full,False,failed,ContextLimitExceeded,32947.0
+archived_protocol_1.1.0,Awaed,awaed,qwen-2.5-7b,full_norag,5,full,False,failed,ContextLimitExceeded,32947.0
+archived_protocol_1.1.0,Awaed,awaed,qwen-2.5-7b,full_rag,1,full,True,failed,ContextLimitExceeded,33670.0
+archived_protocol_1.1.0,Awaed,awaed,qwen-2.5-7b,full_rag,2,full,True,failed,ContextLimitExceeded,33670.0
+archived_protocol_1.1.0,Awaed,awaed,qwen-2.5-7b,full_rag,3,full,True,failed,ContextLimitExceeded,33670.0
+archived_protocol_1.1.0,Awaed,awaed,qwen-2.5-7b,full_rag,4,full,True,failed,ContextLimitExceeded,33670.0
+archived_protocol_1.1.0,Awaed,awaed,qwen-2.5-7b,full_rag,5,full,True,failed,ContextLimitExceeded,33670.0
+archived_protocol_1.1.0,Dawul,dawul,allam-7b,full_norag,1,full,False,failed,ContextLimitExceeded,7149.0
+archived_protocol_1.1.0,Dawul,dawul,allam-7b,full_norag,2,full,False,failed,ContextLimitExceeded,7149.0
+archived_protocol_1.1.0,Dawul,dawul,allam-7b,full_norag,3,full,False,failed,ContextLimitExceeded,7149.0
+archived_protocol_1.1.0,Dawul,dawul,allam-7b,full_norag,4,full,False,failed,ContextLimitExceeded,7149.0
+archived_protocol_1.1.0,Dawul,dawul,allam-7b,full_norag,5,full,False,failed,ContextLimitExceeded,7149.0
+archived_protocol_1.1.0,Dawul,dawul,allam-7b,full_rag,1,full,True,failed,ContextLimitExceeded,7935.0
+archived_protocol_1.1.0,Dawul,dawul,allam-7b,full_rag,2,full,True,failed,ContextLimitExceeded,7935.0
+archived_protocol_1.1.0,Dawul,dawul,allam-7b,full_rag,3,full,True,failed,ContextLimitExceeded,7935.0
+archived_protocol_1.1.0,Dawul,dawul,allam-7b,full_rag,4,full,True,failed,ContextLimitExceeded,7935.0
+archived_protocol_1.1.0,Dawul,dawul,allam-7b,full_rag,5,full,True,failed,ContextLimitExceeded,7935.0
+archived_protocol_1.1.0,Emakn Alarabiya,emaknalarabiya,allam-7b,full_norag,1,full,False,failed,ContextLimitExceeded,3742.0
+archived_protocol_1.1.0,Emakn Alarabiya,emaknalarabiya,allam-7b,full_norag,2,full,False,failed,ContextLimitExceeded,3742.0
+archived_protocol_1.1.0,Emakn Alarabiya,emaknalarabiya,allam-7b,full_norag,3,full,False,failed,ContextLimitExceeded,3742.0
+archived_protocol_1.1.0,Emakn Alarabiya,emaknalarabiya,allam-7b,full_norag,4,full,False,failed,ContextLimitExceeded,3742.0
+archived_protocol_1.1.0,Emakn Alarabiya,emaknalarabiya,allam-7b,full_norag,5,full,False,failed,ContextLimitExceeded,3742.0
+archived_protocol_1.1.0,Emakn Alarabiya,emaknalarabiya,allam-7b,full_rag,1,full,True,failed,ContextLimitExceeded,4528.0
+archived_protocol_1.1.0,Emakn Alarabiya,emaknalarabiya,allam-7b,full_rag,2,full,True,failed,ContextLimitExceeded,4528.0
+archived_protocol_1.1.0,Emakn Alarabiya,emaknalarabiya,allam-7b,full_rag,3,full,True,failed,ContextLimitExceeded,4528.0
+archived_protocol_1.1.0,Emakn Alarabiya,emaknalarabiya,allam-7b,full_rag,4,full,True,failed,ContextLimitExceeded,4528.0
+archived_protocol_1.1.0,Emakn Alarabiya,emaknalarabiya,allam-7b,full_rag,5,full,True,failed,ContextLimitExceeded,4528.0
+archived_protocol_1.1.0,Hakbah,hakbah,allam-7b,full_norag,1,full,False,failed,ContextLimitExceeded,3381.0
+archived_protocol_1.1.0,Hakbah,hakbah,allam-7b,full_norag,2,full,False,failed,ContextLimitExceeded,3381.0
+archived_protocol_1.1.0,Hakbah,hakbah,allam-7b,full_norag,3,full,False,failed,ContextLimitExceeded,3381.0
+archived_protocol_1.1.0,Hakbah,hakbah,allam-7b,full_norag,4,full,False,failed,ContextLimitExceeded,3381.0
+archived_protocol_1.1.0,Hakbah,hakbah,allam-7b,full_norag,5,full,False,failed,ContextLimitExceeded,3381.0
+archived_protocol_1.1.0,Hakbah,hakbah,allam-7b,full_rag,1,full,True,failed,ContextLimitExceeded,4167.0
+archived_protocol_1.1.0,Hakbah,hakbah,allam-7b,full_rag,2,full,True,failed,ContextLimitExceeded,4167.0
+archived_protocol_1.1.0,Hakbah,hakbah,allam-7b,full_rag,3,full,True,failed,ContextLimitExceeded,4167.0
+archived_protocol_1.1.0,Hakbah,hakbah,allam-7b,full_rag,4,full,True,failed,ContextLimitExceeded,4167.0
+archived_protocol_1.1.0,Hakbah,hakbah,allam-7b,full_rag,5,full,True,failed,ContextLimitExceeded,4167.0
+archived_protocol_1.1.0,Malaa,malaa,allam-7b,full_norag,1,full,False,failed,ContextLimitExceeded,5461.0
+archived_protocol_1.1.0,Malaa,malaa,allam-7b,full_norag,2,full,False,failed,ContextLimitExceeded,5461.0
+archived_protocol_1.1.0,Malaa,malaa,allam-7b,full_norag,3,full,False,failed,ContextLimitExceeded,5461.0
+archived_protocol_1.1.0,Malaa,malaa,allam-7b,full_norag,4,full,False,failed,ContextLimitExceeded,5461.0
+archived_protocol_1.1.0,Malaa,malaa,allam-7b,full_norag,5,full,False,failed,ContextLimitExceeded,5461.0
+archived_protocol_1.1.0,Malaa,malaa,allam-7b,full_rag,1,full,True,failed,ContextLimitExceeded,6247.0
+archived_protocol_1.1.0,Malaa,malaa,allam-7b,full_rag,2,full,True,failed,ContextLimitExceeded,6247.0
+archived_protocol_1.1.0,Malaa,malaa,allam-7b,full_rag,3,full,True,failed,ContextLimitExceeded,6247.0
+archived_protocol_1.1.0,Malaa,malaa,allam-7b,full_rag,4,full,True,failed,ContextLimitExceeded,6247.0
+archived_protocol_1.1.0,Malaa,malaa,allam-7b,full_rag,5,full,True,failed,ContextLimitExceeded,6247.0
+archived_protocol_1.1.0,Money Loop,moneyloop,allam-7b,full_norag,1,full,False,failed,ContextLimitExceeded,5558.0
+archived_protocol_1.1.0,Money Loop,moneyloop,allam-7b,full_norag,2,full,False,failed,ContextLimitExceeded,5558.0
+archived_protocol_1.1.0,Money Loop,moneyloop,allam-7b,full_norag,3,full,False,failed,ContextLimitExceeded,5558.0
+archived_protocol_1.1.0,Money Loop,moneyloop,allam-7b,full_norag,4,full,False,failed,ContextLimitExceeded,5558.0
+archived_protocol_1.1.0,Money Loop,moneyloop,allam-7b,full_norag,5,full,False,failed,ContextLimitExceeded,5558.0
+archived_protocol_1.1.0,Money Loop,moneyloop,allam-7b,full_rag,1,full,True,failed,ContextLimitExceeded,6344.0
+archived_protocol_1.1.0,Money Loop,moneyloop,allam-7b,full_rag,2,full,True,failed,ContextLimitExceeded,6344.0
+archived_protocol_1.1.0,Money Loop,moneyloop,allam-7b,full_rag,3,full,True,failed,ContextLimitExceeded,6344.0
+archived_protocol_1.1.0,Money Loop,moneyloop,allam-7b,full_rag,4,full,True,failed,ContextLimitExceeded,6344.0
+archived_protocol_1.1.0,Money Loop,moneyloop,allam-7b,full_rag,5,full,True,failed,ContextLimitExceeded,6344.0
+archived_protocol_1.1.0,Rakeez,rakeez,allam-7b,full_norag,1,full,False,failed,ContextLimitExceeded,4209.0
+archived_protocol_1.1.0,Rakeez,rakeez,allam-7b,full_norag,2,full,False,failed,ContextLimitExceeded,4209.0
+archived_protocol_1.1.0,Rakeez,rakeez,allam-7b,full_norag,3,full,False,failed,ContextLimitExceeded,4209.0
+archived_protocol_1.1.0,Rakeez,rakeez,allam-7b,full_norag,4,full,False,failed,ContextLimitExceeded,4209.0
+archived_protocol_1.1.0,Rakeez,rakeez,allam-7b,full_norag,5,full,False,failed,ContextLimitExceeded,4209.0
+archived_protocol_1.1.0,Rakeez,rakeez,allam-7b,full_rag,1,full,True,failed,ContextLimitExceeded,4995.0
+archived_protocol_1.1.0,Rakeez,rakeez,allam-7b,full_rag,2,full,True,failed,ContextLimitExceeded,4995.0
+archived_protocol_1.1.0,Rakeez,rakeez,allam-7b,full_rag,3,full,True,failed,ContextLimitExceeded,4995.0
+archived_protocol_1.1.0,Rakeez,rakeez,allam-7b,full_rag,4,full,True,failed,ContextLimitExceeded,4995.0
+archived_protocol_1.1.0,Rakeez,rakeez,allam-7b,full_rag,5,full,True,failed,ContextLimitExceeded,4995.0
+archived_protocol_1.1.0,Sahm,sahm,allam-7b,full_norag,1,full,False,failed,ContextLimitExceeded,3468.0
+archived_protocol_1.1.0,Sahm,sahm,allam-7b,full_norag,2,full,False,failed,ContextLimitExceeded,3468.0
+archived_protocol_1.1.0,Sahm,sahm,allam-7b,full_norag,3,full,False,failed,ContextLimitExceeded,3468.0
+archived_protocol_1.1.0,Sahm,sahm,allam-7b,full_norag,4,full,False,failed,ContextLimitExceeded,3468.0
+archived_protocol_1.1.0,Sahm,sahm,allam-7b,full_norag,5,full,False,failed,ContextLimitExceeded,3468.0
+archived_protocol_1.1.0,Sahm,sahm,allam-7b,full_rag,1,full,True,failed,ContextLimitExceeded,4254.0
+archived_protocol_1.1.0,Sahm,sahm,allam-7b,full_rag,2,full,True,failed,ContextLimitExceeded,4254.0
+archived_protocol_1.1.0,Sahm,sahm,allam-7b,full_rag,3,full,True,failed,ContextLimitExceeded,4254.0
+archived_protocol_1.1.0,Sahm,sahm,allam-7b,full_rag,4,full,True,failed,ContextLimitExceeded,4254.0
+archived_protocol_1.1.0,Sahm,sahm,allam-7b,full_rag,5,full,True,failed,ContextLimitExceeded,4254.0
+archived_protocol_1.1.0,Ta3meed,ta3meed,allam-7b,full_rag,1,full,True,failed,ContextLimitExceeded,3586.0
+archived_protocol_1.1.0,Ta3meed,ta3meed,allam-7b,full_rag,2,full,True,failed,ContextLimitExceeded,3586.0
+archived_protocol_1.1.0,Ta3meed,ta3meed,allam-7b,full_rag,3,full,True,failed,ContextLimitExceeded,3586.0
+archived_protocol_1.1.0,Ta3meed,ta3meed,allam-7b,full_rag,4,full,True,failed,ContextLimitExceeded,3586.0
+archived_protocol_1.1.0,Ta3meed,ta3meed,allam-7b,full_rag,5,full,True,failed,ContextLimitExceeded,3586.0
+archived_protocol_1.1.0,Tamra Capital,tamracapital,allam-7b,full_norag,1,full,False,failed,ContextLimitExceeded,5469.0
+archived_protocol_1.1.0,Tamra Capital,tamracapital,allam-7b,full_norag,2,full,False,failed,ContextLimitExceeded,5469.0
+archived_protocol_1.1.0,Tamra Capital,tamracapital,allam-7b,full_norag,3,full,False,failed,ContextLimitExceeded,5469.0
+archived_protocol_1.1.0,Tamra Capital,tamracapital,allam-7b,full_norag,4,full,False,failed,ContextLimitExceeded,5469.0
+archived_protocol_1.1.0,Tamra Capital,tamracapital,allam-7b,full_norag,5,full,False,failed,ContextLimitExceeded,5469.0
+archived_protocol_1.1.0,Tamra Capital,tamracapital,allam-7b,full_rag,1,full,True,failed,ContextLimitExceeded,6255.0
+archived_protocol_1.1.0,Tamra Capital,tamracapital,allam-7b,full_rag,2,full,True,failed,ContextLimitExceeded,6255.0
+archived_protocol_1.1.0,Tamra Capital,tamracapital,allam-7b,full_rag,3,full,True,failed,ContextLimitExceeded,6255.0
+archived_protocol_1.1.0,Tamra Capital,tamracapital,allam-7b,full_rag,4,full,True,failed,ContextLimitExceeded,6255.0
+archived_protocol_1.1.0,Tamra Capital,tamracapital,allam-7b,full_rag,5,full,True,failed,ContextLimitExceeded,6255.0
+archived_protocol_1.1.0,Tarmeez,tarmeez,allam-7b,full_rag,1,full,True,failed,ContextLimitExceeded,3494.0
+archived_protocol_1.1.0,Tarmeez,tarmeez,allam-7b,full_rag,2,full,True,failed,ContextLimitExceeded,3494.0
+archived_protocol_1.1.0,Tarmeez,tarmeez,allam-7b,full_rag,3,full,True,failed,ContextLimitExceeded,3494.0
+archived_protocol_1.1.0,Tarmeez,tarmeez,allam-7b,full_rag,4,full,True,failed,ContextLimitExceeded,3494.0
+archived_protocol_1.1.0,Tarmeez,tarmeez,allam-7b,full_rag,5,full,True,failed,ContextLimitExceeded,3494.0

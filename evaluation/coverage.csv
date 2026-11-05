@@ -1,0 +1,17 @@
+model,strategy,successful_records,failed_records,policies_complete_5_runs
+allam-7b,full_norag,55,45.0,11
+allam-7b,full_rag,45,55.0,9
+allam-7b,section_norag,100,5.0,20
+allam-7b,section_rag,100,5.0,20
+llama-3.1-8b,full_norag,105,0.0,21
+llama-3.1-8b,full_rag,105,0.0,21
+llama-3.1-8b,section_norag,105,0.0,21
+llama-3.1-8b,section_rag,105,0.0,21
+mistral-7b,full_norag,100,5.0,20
+mistral-7b,full_rag,100,5.0,20
+mistral-7b,section_norag,105,0.0,21
+mistral-7b,section_rag,105,0.0,21
+qwen-2.5-7b,full_norag,100,5.0,20
+qwen-2.5-7b,full_rag,100,5.0,20
+qwen-2.5-7b,section_norag,105,0.0,21
+qwen-2.5-7b,section_rag,105,0.0,21

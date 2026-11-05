@@ -1,0 +1,6 @@
+input,variant,n,max_tokens,over_limit
+full-policy RAG query (rubric),current,1,110,0
+section RAG queries (all policies),current,311,2154,29
+PDPL passages (heading sections),current heading chunks,38,683,2
+PDPL passages (token windows),window 256/overlap 32,42,256,0
+PDPL passages (token windows),window 512/overlap 64,21,512,0

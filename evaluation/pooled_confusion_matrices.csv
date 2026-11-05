@@ -1,0 +1,17 @@
+model,strategy,rule,n_policies,n_runs,n_decisions,tn,fp,fn,tp,expert_negative,expert_positive
+allam-7b,full_norag,full,11,5,825,18,352,1,454,370,455
+allam-7b,full_rag,full,9,5,675,54,251,23,347,305,370
+allam-7b,section_norag,or,20,5,1500,178,497,42,783,675,825
+allam-7b,section_rag,or,20,5,1500,242,433,67,758,675,825
+llama-3.1-8b,full_norag,full,21,5,1575,217,478,77,803,695,880
+llama-3.1-8b,full_rag,full,21,5,1575,211,484,128,752,695,880
+llama-3.1-8b,section_norag,or,21,5,1575,189,506,35,845,695,880
+llama-3.1-8b,section_rag,or,21,5,1575,83,612,29,851,695,880
+mistral-7b,full_norag,full,20,5,1500,60,615,5,820,675,825
+mistral-7b,full_rag,full,20,5,1500,105,570,17,808,675,825
+mistral-7b,section_norag,or,21,5,1575,62,633,14,866,695,880
+mistral-7b,section_rag,or,21,5,1575,44,651,10,870,695,880
+qwen-2.5-7b,full_norag,full,20,5,1500,205,470,30,795,675,825
+qwen-2.5-7b,full_rag,full,20,5,1500,196,479,72,753,675,825
+qwen-2.5-7b,section_norag,or,21,5,1575,152,543,20,860,695,880
+qwen-2.5-7b,section_rag,or,21,5,1575,135,560,35,845,695,880

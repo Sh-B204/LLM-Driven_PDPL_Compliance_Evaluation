@@ -1,0 +1,5 @@
+Section aggregation: or
+RAG bars compare matching policies within each model/unit.
+All main figures use this same fixed rule. Aggregation figure compares all four rules.
+Separate first-run FP/FN and exact McNemar p-values (unadjusted, exploratory), Table 6 and F7 are recomputed from saved vectors under this same rule.
+No model inference. No PDFs generated.

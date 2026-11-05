@@ -1,0 +1,169 @@
+model,unit,variant,app,section,prompt_tokens,limit,strategy
+allam-7b,full,norag,Circlys,0,1692,4096,full_norag
+allam-7b,full,rag_k3,Circlys,0,2478,4096,full_rag
+allam-7b,full,norag,Dinar,0,2176,4096,full_norag
+allam-7b,full,rag_k3,Dinar,0,2962,4096,full_rag
+allam-7b,full,norag,Safqah,0,1174,4096,full_norag
+allam-7b,full,rag_k3,Safqah,0,1960,4096,full_rag
+allam-7b,full,norag,Tarmeez,0,2708,4096,full_norag
+allam-7b,full,rag_k3,Tarmeez,0,3494,4096,full_rag
+allam-7b,full,norag,Tamra Capital,0,5469,4096,full_norag
+allam-7b,full,rag_k3,Tamra Capital,0,6255,4096,full_rag
+allam-7b,full,norag,Malaa,0,5461,4096,full_norag
+allam-7b,full,rag_k3,Malaa,0,6247,4096,full_rag
+allam-7b,full,norag,Aseel Invest,0,2310,4096,full_norag
+allam-7b,full,rag_k3,Aseel Invest,0,3096,4096,full_rag
+allam-7b,full,norag,Sahm,0,3468,4096,full_norag
+allam-7b,full,rag_k3,Sahm,0,4254,4096,full_rag
+allam-7b,full,norag,Hakbah,0,3381,4096,full_norag
+allam-7b,full,rag_k3,Hakbah,0,4167,4096,full_rag
+allam-7b,full,norag,Dawul,0,7149,4096,full_norag
+allam-7b,full,rag_k3,Dawul,0,7935,4096,full_rag
+allam-7b,full,norag,Sukuk,0,1361,4096,full_norag
+allam-7b,full,rag_k3,Sukuk,0,2147,4096,full_rag
+allam-7b,full,norag,Awaed,0,42483,4096,full_norag
+allam-7b,full,rag_k3,Awaed,0,43269,4096,full_rag
+allam-7b,full,norag,Abyan,0,1564,4096,full_norag
+allam-7b,full,rag_k3,Abyan,0,2350,4096,full_rag
+allam-7b,full,norag,Manafa,0,1991,4096,full_norag
+allam-7b,full,rag_k3,Manafa,0,2777,4096,full_rag
+allam-7b,full,norag,Rakeez,0,4209,4096,full_norag
+allam-7b,full,rag_k3,Rakeez,0,4995,4096,full_rag
+allam-7b,full,norag,Emakn Alarabiya,0,3742,4096,full_norag
+allam-7b,full,rag_k3,Emakn Alarabiya,0,4528,4096,full_rag
+allam-7b,full,norag,Money Loop,0,5558,4096,full_norag
+allam-7b,full,rag_k3,Money Loop,0,6344,4096,full_rag
+allam-7b,full,norag,Ta3meed,0,2800,4096,full_norag
+allam-7b,full,rag_k3,Ta3meed,0,3586,4096,full_rag
+allam-7b,full,norag,Sulfah,0,2062,4096,full_norag
+allam-7b,full,rag_k3,Sulfah,0,2848,4096,full_rag
+allam-7b,full,norag,Drahim,0,4732,4096,full_norag
+allam-7b,full,rag_k3,Drahim,0,5518,4096,full_rag
+allam-7b,full,norag,Mudaraba,0,1669,4096,full_norag
+allam-7b,full,rag_k3,Mudaraba,0,2455,4096,full_rag
+llama-3.1-8b,full,norag,Circlys,0,1601,131072,full_norag
+llama-3.1-8b,full,rag_k3,Circlys,0,2319,131072,full_rag
+llama-3.1-8b,full,norag,Dinar,0,2076,131072,full_norag
+llama-3.1-8b,full,rag_k3,Dinar,0,2794,131072,full_rag
+llama-3.1-8b,full,norag,Safqah,0,1095,131072,full_norag
+llama-3.1-8b,full,rag_k3,Safqah,0,1813,131072,full_rag
+llama-3.1-8b,full,norag,Tarmeez,0,2648,131072,full_norag
+llama-3.1-8b,full,rag_k3,Tarmeez,0,3366,131072,full_rag
+llama-3.1-8b,full,norag,Tamra Capital,0,5212,131072,full_norag
+llama-3.1-8b,full,rag_k3,Tamra Capital,0,5930,131072,full_rag
+llama-3.1-8b,full,norag,Malaa,0,5102,131072,full_norag
+llama-3.1-8b,full,rag_k3,Malaa,0,5820,131072,full_rag
+llama-3.1-8b,full,norag,Aseel Invest,0,2172,131072,full_norag
+llama-3.1-8b,full,rag_k3,Aseel Invest,0,2890,131072,full_rag
+llama-3.1-8b,full,norag,Sahm,0,3351,131072,full_norag
+llama-3.1-8b,full,rag_k3,Sahm,0,4069,131072,full_rag
+llama-3.1-8b,full,norag,Hakbah,0,3113,131072,full_norag
+llama-3.1-8b,full,rag_k3,Hakbah,0,3831,131072,full_rag
+llama-3.1-8b,full,norag,Dawul,0,6838,131072,full_norag
+llama-3.1-8b,full,rag_k3,Dawul,0,7556,131072,full_rag
+llama-3.1-8b,full,norag,Sukuk,0,1264,131072,full_norag
+llama-3.1-8b,full,rag_k3,Sukuk,0,1982,131072,full_rag
+llama-3.1-8b,full,norag,Awaed,0,42726,131072,full_norag
+llama-3.1-8b,full,rag_k3,Awaed,0,43444,131072,full_rag
+llama-3.1-8b,full,norag,Abyan,0,2305,131072,full_norag
+llama-3.1-8b,full,rag_k3,Abyan,0,3023,131072,full_rag
+llama-3.1-8b,full,norag,Manafa,0,1875,131072,full_norag
+llama-3.1-8b,full,rag_k3,Manafa,0,2593,131072,full_rag
+llama-3.1-8b,full,norag,Rakeez,0,6492,131072,full_norag
+llama-3.1-8b,full,rag_k3,Rakeez,0,7210,131072,full_rag
+llama-3.1-8b,full,norag,Emakn Alarabiya,0,3573,131072,full_norag
+llama-3.1-8b,full,rag_k3,Emakn Alarabiya,0,4291,131072,full_rag
+llama-3.1-8b,full,norag,Money Loop,0,8323,131072,full_norag
+llama-3.1-8b,full,rag_k3,Money Loop,0,9041,131072,full_rag
+llama-3.1-8b,full,norag,Ta3meed,0,4331,131072,full_norag
+llama-3.1-8b,full,rag_k3,Ta3meed,0,5049,131072,full_rag
+llama-3.1-8b,full,norag,Sulfah,0,3086,131072,full_norag
+llama-3.1-8b,full,rag_k3,Sulfah,0,3804,131072,full_rag
+llama-3.1-8b,full,norag,Drahim,0,7321,131072,full_norag
+llama-3.1-8b,full,rag_k3,Drahim,0,8039,131072,full_rag
+llama-3.1-8b,full,norag,Mudaraba,0,2607,131072,full_norag
+llama-3.1-8b,full,rag_k3,Mudaraba,0,3325,131072,full_rag
+qwen-2.5-7b,full,norag,Circlys,0,1614,32768,full_norag
+qwen-2.5-7b,full,rag_k3,Circlys,0,2337,32768,full_rag
+qwen-2.5-7b,full,norag,Dinar,0,2077,32768,full_norag
+qwen-2.5-7b,full,rag_k3,Dinar,0,2800,32768,full_rag
+qwen-2.5-7b,full,norag,Safqah,0,1104,32768,full_norag
+qwen-2.5-7b,full,rag_k3,Safqah,0,1827,32768,full_rag
+qwen-2.5-7b,full,norag,Tarmeez,0,2655,32768,full_norag
+qwen-2.5-7b,full,rag_k3,Tarmeez,0,3378,32768,full_rag
+qwen-2.5-7b,full,norag,Tamra Capital,0,5247,32768,full_norag
+qwen-2.5-7b,full,rag_k3,Tamra Capital,0,5970,32768,full_rag
+qwen-2.5-7b,full,norag,Malaa,0,5153,32768,full_norag
+qwen-2.5-7b,full,rag_k3,Malaa,0,5876,32768,full_rag
+qwen-2.5-7b,full,norag,Aseel Invest,0,2170,32768,full_norag
+qwen-2.5-7b,full,rag_k3,Aseel Invest,0,2893,32768,full_rag
+qwen-2.5-7b,full,norag,Sahm,0,3356,32768,full_norag
+qwen-2.5-7b,full,rag_k3,Sahm,0,4079,32768,full_rag
+qwen-2.5-7b,full,norag,Hakbah,0,3139,32768,full_norag
+qwen-2.5-7b,full,rag_k3,Hakbah,0,3862,32768,full_rag
+qwen-2.5-7b,full,norag,Dawul,0,6900,32768,full_norag
+qwen-2.5-7b,full,rag_k3,Dawul,0,7623,32768,full_rag
+qwen-2.5-7b,full,norag,Sukuk,0,1269,32768,full_norag
+qwen-2.5-7b,full,rag_k3,Sukuk,0,1992,32768,full_rag
+qwen-2.5-7b,full,norag,Awaed,0,32947,32768,full_norag
+qwen-2.5-7b,full,rag_k3,Awaed,0,33670,32768,full_rag
+qwen-2.5-7b,full,norag,Abyan,0,2168,32768,full_norag
+qwen-2.5-7b,full,rag_k3,Abyan,0,2891,32768,full_rag
+qwen-2.5-7b,full,norag,Manafa,0,1877,32768,full_norag
+qwen-2.5-7b,full,rag_k3,Manafa,0,2600,32768,full_rag
+qwen-2.5-7b,full,norag,Rakeez,0,6348,32768,full_norag
+qwen-2.5-7b,full,rag_k3,Rakeez,0,7071,32768,full_rag
+qwen-2.5-7b,full,norag,Emakn Alarabiya,0,3625,32768,full_norag
+qwen-2.5-7b,full,rag_k3,Emakn Alarabiya,0,4348,32768,full_rag
+qwen-2.5-7b,full,norag,Money Loop,0,8142,32768,full_norag
+qwen-2.5-7b,full,rag_k3,Money Loop,0,8865,32768,full_rag
+qwen-2.5-7b,full,norag,Ta3meed,0,4073,32768,full_norag
+qwen-2.5-7b,full,rag_k3,Ta3meed,0,4796,32768,full_rag
+qwen-2.5-7b,full,norag,Sulfah,0,2912,32768,full_norag
+qwen-2.5-7b,full,rag_k3,Sulfah,0,3635,32768,full_rag
+qwen-2.5-7b,full,norag,Drahim,0,7160,32768,full_norag
+qwen-2.5-7b,full,rag_k3,Drahim,0,7883,32768,full_rag
+qwen-2.5-7b,full,norag,Mudaraba,0,2424,32768,full_norag
+qwen-2.5-7b,full,rag_k3,Mudaraba,0,3147,32768,full_rag
+mistral-7b,full,norag,Circlys,0,1740,32768,full_norag
+mistral-7b,full,rag_k3,Circlys,0,2533,32768,full_rag
+mistral-7b,full,norag,Dinar,0,2226,32768,full_norag
+mistral-7b,full,rag_k3,Dinar,0,3019,32768,full_rag
+mistral-7b,full,norag,Safqah,0,1183,32768,full_norag
+mistral-7b,full,rag_k3,Safqah,0,1976,32768,full_rag
+mistral-7b,full,norag,Tarmeez,0,2776,32768,full_norag
+mistral-7b,full,rag_k3,Tarmeez,0,3569,32768,full_rag
+mistral-7b,full,norag,Tamra Capital,0,5556,32768,full_norag
+mistral-7b,full,rag_k3,Tamra Capital,0,6349,32768,full_rag
+mistral-7b,full,norag,Malaa,0,5533,32768,full_norag
+mistral-7b,full,rag_k3,Malaa,0,6326,32768,full_rag
+mistral-7b,full,norag,Aseel Invest,0,2344,32768,full_norag
+mistral-7b,full,rag_k3,Aseel Invest,0,3137,32768,full_rag
+mistral-7b,full,norag,Sahm,0,3545,32768,full_norag
+mistral-7b,full,rag_k3,Sahm,0,4338,32768,full_rag
+mistral-7b,full,norag,Hakbah,0,3456,32768,full_norag
+mistral-7b,full,rag_k3,Hakbah,0,4249,32768,full_rag
+mistral-7b,full,norag,Dawul,0,7357,32768,full_norag
+mistral-7b,full,rag_k3,Dawul,0,8150,32768,full_rag
+mistral-7b,full,norag,Sukuk,0,1396,32768,full_norag
+mistral-7b,full,rag_k3,Sukuk,0,2189,32768,full_rag
+mistral-7b,full,norag,Awaed,0,74022,32768,full_norag
+mistral-7b,full,rag_k3,Awaed,0,74815,32768,full_rag
+mistral-7b,full,norag,Abyan,0,5307,32768,full_norag
+mistral-7b,full,rag_k3,Abyan,0,6100,32768,full_rag
+mistral-7b,full,norag,Manafa,0,2063,32768,full_norag
+mistral-7b,full,rag_k3,Manafa,0,2856,32768,full_rag
+mistral-7b,full,norag,Rakeez,0,15357,32768,full_norag
+mistral-7b,full,rag_k3,Rakeez,0,16150,32768,full_rag
+mistral-7b,full,norag,Emakn Alarabiya,0,3804,32768,full_norag
+mistral-7b,full,rag_k3,Emakn Alarabiya,0,4597,32768,full_rag
+mistral-7b,full,norag,Money Loop,0,18982,32768,full_norag
+mistral-7b,full,rag_k3,Money Loop,0,19775,32768,full_rag
+mistral-7b,full,norag,Ta3meed,0,10053,32768,full_norag
+mistral-7b,full,rag_k3,Ta3meed,0,10846,32768,full_rag
+mistral-7b,full,norag,Sulfah,0,6870,32768,full_norag
+mistral-7b,full,rag_k3,Sulfah,0,7663,32768,full_rag
+mistral-7b,full,norag,Drahim,0,17979,32768,full_norag
+mistral-7b,full,rag_k3,Drahim,0,18772,32768,full_rag
+mistral-7b,full,norag,Mudaraba,0,5975,32768,full_norag
+mistral-7b,full,rag_k3,Mudaraba,0,6768,32768,full_rag

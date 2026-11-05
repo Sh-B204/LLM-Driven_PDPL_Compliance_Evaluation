@@ -1,0 +1,17 @@
+model,strategy,mean_pairwise_run_agreement
+allam-7b,full_norag,0.9939393939393939
+allam-7b,full_rag,0.9644444444444445
+allam-7b,section_norag,0.9580000000000001
+allam-7b,section_rag,0.96
+llama-3.1-8b,full_norag,0.9650793650793652
+llama-3.1-8b,full_rag,0.9809523809523809
+llama-3.1-8b,section_norag,0.9771428571428571
+llama-3.1-8b,section_rag,0.993015873015873
+mistral-7b,full_norag,0.9926666666666668
+mistral-7b,full_rag,0.9780000000000001
+mistral-7b,section_norag,0.994920634920635
+mistral-7b,section_rag,0.9987301587301588
+qwen-2.5-7b,full_norag,0.99
+qwen-2.5-7b,full_rag,0.9933333333333334
+qwen-2.5-7b,section_norag,0.9974603174603175
+qwen-2.5-7b,section_rag,1.0

@@ -1,0 +1,27 @@
+\begin{table*}[t]
+\centering\small
+\setlength{\tabcolsep}{6pt}
+\caption{Criterion-level results (positive class: disclosed). Each value is the unweighted mean, over the 16 model $\times$ strategy configurations, of the value for that configuration, computed from the policies successfully evaluated for that configuration and pooled over its five repetitions (section strategies use the selected fixed aggregation rule; failed records are excluded). Observed agreement is the share of decisions that match the expert label. The prevalence baseline is the share of expert-positive policies for the criterion, i.e.\ the accuracy of always predicting \textit{disclosed}, taken from the expert labels of the same policies and averaged in the same way, so it is directly comparable with agreement. FPR $=$ FP/(FP+TN) and FNR $=$ FN/(FN+TP) are averaged only over the configurations where they are defined ($^{\dagger}$: fewer than 16); -- marks a rate undefined in every configuration (no expert negatives or positives for that criterion). The configurations repeat predictions on the same policies and are not independent observations.}
+\label{tab:llm_criterion}
+\begin{tabular}{lcccc}
+\toprule
+Criterion & \shortstack{Observed\\agreement (\%)} & \shortstack{Prevalence\\baseline (\%)} & \shortstack{FPR\\(\%)} & \shortstack{FNR\\(\%)} \\
+\midrule
+A1 & 88.9 & 86.0 & 51.2 & 4.9 \\
+A2 & 88.0 & 81.7 & 64.7 & 0.0 \\
+A3 & 72.7 & 71.4 & 43.3 & 20.8 \\
+B1 & 81.7 & 81.7 & 100.0 & 0.0 \\
+B2 & 86.0 & 86.0 & 83.8 & 2.5 \\
+B3 & 40.5 & 36.0 & 88.2 & 7.7 \\
+B4 & 20.8 & 8.5 & 85.3 & 14.3$^{\dagger}$ \\
+B5 & 24.3 & 21.9 & 97.0 & 0.0 \\
+B6 & 62.0 & 62.2 & 99.8 & 0.5 \\
+B7 & 1.3 & 0.0 & 98.7 & -- \\
+C1 & 86.7 & 86.0 & 90.4 & 0.8 \\
+C2 & 84.3 & 84.7 & 93.8 & 1.6 \\
+C3 & 93.1 & 91.5 & 77.9$^{\dagger}$ & 0.3 \\
+D1 & 36.3 & 8.5 & 65.0 & 45.0$^{\dagger}$ \\
+D2 & 62.4 & 25.5 & 40.9 & 28.0 \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,31 @@
+\begin{table}[!t]
+\centering\footnotesize
+\setlength{\tabcolsep}{3pt}
+\caption{Error asymmetry in the first run. FP and FN are counts on successfully evaluated policies ($n$). $p$ is the two-sided exact McNemar test of equal FP and FN frequencies. Tests are exploratory, unadjusted for multiple comparisons and within-policy dependence.}
+\label{tab:error_asymmetry}
+\begin{tabular}{llrrrc}
+\toprule
+Model & Strategy & $n$ & FP & FN & $p$ \\
+\midrule
+ALLaM-7B & Section & 20 & 102 & 8 & $<0.001$ \\
+ & Section + RAG & 20 & 82 & 13 & $<0.001$ \\
+ & Full policy & 11 & 71 & 1 & $<0.001$ \\
+ & Full policy + RAG & 9 & 47 & 7 & $<0.001$ \\
+\midrule
+LLaMA-3.1-8B & Section & 21 & 102 & 9 & $<0.001$ \\
+ & Section + RAG & 21 & 123 & 6 & $<0.001$ \\
+ & Full policy & 21 & 94 & 17 & $<0.001$ \\
+ & Full policy + RAG & 21 & 97 & 27 & $<0.001$ \\
+\midrule
+Qwen-2.5-7B & Section & 21 & 109 & 4 & $<0.001$ \\
+ & Section + RAG & 21 & 112 & 7 & $<0.001$ \\
+ & Full policy & 20 & 96 & 6 & $<0.001$ \\
+ & Full policy + RAG & 20 & 96 & 15 & $<0.001$ \\
+\midrule
+Mistral-7B & Section & 21 & 127 & 2 & $<0.001$ \\
+ & Section + RAG & 21 & 130 & 2 & $<0.001$ \\
+ & Full policy & 20 & 124 & 1 & $<0.001$ \\
+ & Full policy + RAG & 20 & 116 & 2 & $<0.001$ \\
+\bottomrule
+\end{tabular}
+\end{table}

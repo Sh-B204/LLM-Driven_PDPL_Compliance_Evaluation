@@ -1,7 +1,7 @@
 runs: 5
 applications_file: "configs/applications.yaml"
 models_file: "configs/models.yaml"
-rubric_path: "rubric/rubric_items.txt"   
+rubric_path: "rubric/rubric_items.txt"
 
 strategies:
   section_rag:
@@ -28,23 +28,24 @@ strategies:
     prompt_path: "prompts/full_policy.txt"
 
 retrieval:
+  embedding_revision: "614241f622f53c4eeff9890bdc4f31cfecc418b3"
   corpus_path: "data/pdpl/IRPDPL.docx"
   embedding_model: "intfloat/multilingual-e5-small"
   embedding_max_length: 512
   embedding_device: null
-  chunking: "docx_heading_sections" 
-  top_k_section: 3 
-  top_k_full: 3 
+  chunking: "docx_heading_sections"
+  top_k_section: 3
+  top_k_full: 3
   section_context_separator: "\n"
   full_context_separator: "\n\n"
 
 generation:
-  max_new_tokens: 800 
-  temperature: 0.1 
+  max_new_tokens: 800
+  temperature: 0.1
   top_p: 0.95
-  repetition_penalty: 1.15
-  do_sample: true 
-  seed_base: 1234 
+  repetition_penalty: 1.0
+  do_sample: true
+  seed_base: 1234
 
 retry:
   max_attempts: 3
@@ -54,7 +55,8 @@ retry:
   jitter_seconds: 1.0
 
 output:
-  results_dir: "results"
+  delete_model_cache_after_run: false
+  results_dir: "results_v2"
   hf_token_env: "HF_TOKEN"
 
 ground_truth:
@@ -64,4 +66,4 @@ ground_truth:
 analysis:
   bootstrap_samples: 2000
   bootstrap_seed: 2026
-  keyword_patterns_path: null  
+  keyword_patterns_path: null

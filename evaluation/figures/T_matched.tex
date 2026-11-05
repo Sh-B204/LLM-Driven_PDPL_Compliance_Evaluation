@@ -1,0 +1,33 @@
+\begin{table*}[!t]
+\centering\scriptsize
+\setlength{\tabcolsep}{2pt}
+\caption{Model performance on the common policy subset, reported as mean $\pm$ sample SD over 5 runs. $n$ denotes evaluated policies; section predictions use OR. Bold indicates column maxima.}
+\label{tab:llm_matched}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrcccccccc}
+\toprule
+Model & Strategy & $n$ & Accuracy (\%) & BA (\%) & Macro-F1 (\%) & MCC & $\kappa$ & Precision (\%) & Recall (\%) & Specificity (\%) \\
+\midrule
+ALLaM-7B & Section & 9 & 64.00 $\pm$ 0.66 & 60.54 $\pm$ 0.69 & 56.38 $\pm$ 0.92 & 0.312 $\pm$ 0.019 & 0.225 $\pm$ 0.015 & 60.82 $\pm$ 0.41 & 96.49 $\pm$ 0.74 & 24.59 $\pm$ 1.16 \\
+ & Section + RAG & 9 & 62.81 $\pm$ 2.59 & 59.72 $\pm$ 2.70 & 56.54 $\pm$ 3.36 & 0.257 $\pm$ 0.066 & 0.206 $\pm$ 0.057 & 60.62 $\pm$ 1.68 & 91.89 $\pm$ 1.66 & 27.54 $\pm$ 3.91 \\
+ & Full policy & 9 & 55.26 $\pm$ 0.41 & 50.49 $\pm$ 0.45 & 36.48 $\pm$ 0.98 & 0.095 $\pm$ 0.000 & 0.011 $\pm$ 0.010 & 55.06 $\pm$ 0.22 & \textbf{100.00 $\pm$ 0.00} & 0.98 $\pm$ 0.90 \\
+ & Full policy + RAG & 9 & 59.41 $\pm$ 1.33 & 55.74 $\pm$ 1.45 & 49.92 $\pm$ 2.43 & 0.180 $\pm$ 0.040 & 0.123 $\pm$ 0.031 & 58.04 $\pm$ 0.86 & 93.78 $\pm$ 2.05 & 17.70 $\pm$ 3.55 \\
+\midrule
+LLaMA-3.1-8B & Section & 9 & 65.48 $\pm$ 0.84 & 62.15 $\pm$ 0.91 & 58.66 $\pm$ 1.30 & 0.346 $\pm$ 0.021 & 0.259 $\pm$ 0.019 & 61.83 $\pm$ 0.58 & 96.76 $\pm$ 0.74 & 27.54 $\pm$ 1.80 \\
+ & Section + RAG & 9 & 58.07 $\pm$ 0.41 & 54.04 $\pm$ 0.45 & 46.11 $\pm$ 0.78 & 0.151 $\pm$ 0.013 & 0.087 $\pm$ 0.010 & 56.98 $\pm$ 0.25 & 95.95 $\pm$ 0.00 & 12.13 $\pm$ 0.90 \\
+ & Full policy & 9 & 65.48 $\pm$ 0.66 & 62.61 $\pm$ 0.69 & 60.39 $\pm$ 0.84 & 0.320 $\pm$ 0.017 & 0.266 $\pm$ 0.014 & 62.52 $\pm$ 0.45 & 92.43 $\pm$ 0.74 & 32.79 $\pm$ 1.16 \\
+ & Full policy + RAG & 9 & 62.67 $\pm$ 0.41 & 60.16 $\pm$ 0.41 & 58.45 $\pm$ 0.48 & 0.240 $\pm$ 0.010 & 0.212 $\pm$ 0.009 & 61.35 $\pm$ 0.27 & 86.22 $\pm$ 0.60 & \textbf{34.10 $\pm$ 0.73} \\
+\midrule
+Qwen-2.5-7B & Section & 9 & 65.93 $\pm$ 0.00 & 62.30 $\pm$ 0.00 & 57.88 $\pm$ 0.00 & 0.389 $\pm$ 0.000 & 0.263 $\pm$ 0.000 & 61.67 $\pm$ 0.00 & \textbf{100.00 $\pm$ 0.00} & 24.59 $\pm$ 0.00 \\
+ & Section + RAG & 9 & 61.48 $\pm$ 0.00 & 57.81 $\pm$ 0.00 & 52.39 $\pm$ 0.00 & 0.247 $\pm$ 0.000 & 0.167 $\pm$ 0.000 & 59.17 $\pm$ 0.00 & 95.95 $\pm$ 0.00 & 19.67 $\pm$ 0.00 \\
+ & Full policy & 9 & \textbf{68.44 $\pm$ 0.41} & \textbf{65.08 $\pm$ 0.45} & \textbf{62.00 $\pm$ 0.64} & \textbf{0.438 $\pm$ 0.008} & \textbf{0.321 $\pm$ 0.009} & \textbf{63.47 $\pm$ 0.30} & \textbf{100.00 $\pm$ 0.00} & 30.16 $\pm$ 0.90 \\
+ & Full policy + RAG & 9 & 65.19 $\pm$ 0.00 & 62.05 $\pm$ 0.00 & 59.12 $\pm$ 0.00 & 0.325 $\pm$ 0.000 & 0.255 $\pm$ 0.000 & 61.95 $\pm$ 0.00 & 94.59 $\pm$ 0.00 & 29.51 $\pm$ 0.00 \\
+\midrule
+Mistral-7B & Section & 9 & 61.04 $\pm$ 0.41 & 57.03 $\pm$ 0.45 & 49.92 $\pm$ 0.77 & 0.262 $\pm$ 0.010 & 0.152 $\pm$ 0.010 & 58.59 $\pm$ 0.26 & 98.65 $\pm$ 0.00 & 15.41 $\pm$ 0.90 \\
+ & Section + RAG & 9 & 58.37 $\pm$ 0.33 & 53.93 $\pm$ 0.37 & 43.53 $\pm$ 0.72 & 0.211 $\pm$ 0.011 & 0.086 $\pm$ 0.008 & 56.84 $\pm$ 0.19 & \textbf{100.00 $\pm$ 0.00} & 7.87 $\pm$ 0.73 \\
+ & Full policy & 9 & 59.26 $\pm$ 0.00 & 54.92 $\pm$ 0.00 & 45.41 $\pm$ 0.00 & 0.238 $\pm$ 0.000 & 0.107 $\pm$ 0.000 & 57.36 $\pm$ 0.00 & \textbf{100.00 $\pm$ 0.00} & 9.84 $\pm$ 0.00 \\
+ & Full policy + RAG & 9 & 61.04 $\pm$ 0.41 & 57.03 $\pm$ 0.45 & 49.92 $\pm$ 0.77 & 0.262 $\pm$ 0.010 & 0.152 $\pm$ 0.010 & 58.59 $\pm$ 0.26 & 98.65 $\pm$ 0.00 & 15.41 $\pm$ 0.90 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

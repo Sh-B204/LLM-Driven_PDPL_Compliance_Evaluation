@@ -1,0 +1,22 @@
+app,paragraph_chars_extracted,n_tables,table_chars_not_extracted,n_textboxes,textbox_chars_not_extracted,header_footer_chars_not_extracted,content_control_chars_not_extracted,n_heading_paragraphs,intro_before_first_heading,n_sections_no_heading_fallback
+Circlys,5997,0,0,0,0,0,0,11,False,0
+Dinar,8668,0,0,0,0,0,0,13,False,0
+Safqah,3388,0,0,0,0,0,0,6,False,0
+Tarmeez,12032,0,0,0,0,0,0,11,False,0
+Tamra Capital,24641,0,0,0,0,0,0,16,False,0
+Malaa,24291,0,0,0,0,0,0,26,False,0
+Aseel Invest,9267,0,0,0,0,0,0,10,False,0
+Sahm,15371,0,0,0,0,0,0,11,False,0
+Hakbah,13850,0,0,0,0,0,0,14,True,0
+Dawul,32685,0,0,0,0,0,0,32,False,0
+Sukuk,3942,0,0,0,0,0,0,11,False,0
+Awaed,35633,0,0,0,0,0,0,30,False,0
+Abyan,5587,0,0,0,0,0,0,6,False,0
+Manafa,8024,0,0,0,0,0,0,11,False,0
+Rakeez,16495,0,0,0,0,0,0,14,False,0
+Emakn Alarabiya,15613,0,0,0,0,0,0,15,True,0
+Money Loop,20840,0,0,0,0,0,0,19,False,0
+Ta3meed,10963,0,0,0,0,0,0,13,False,0
+Sulfah,7375,0,0,0,0,0,0,14,False,0
+Drahim,19400,0,0,0,0,0,0,21,False,0
+Mudaraba,6360,0,0,0,0,0,0,7,False,0

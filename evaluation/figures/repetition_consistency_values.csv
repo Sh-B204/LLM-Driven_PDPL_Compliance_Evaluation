@@ -1,0 +1,17 @@
+model,strategy,agreement_pct,n_policies
+allam-7b,section_norag,95.80000000000001,20
+allam-7b,section_rag,96.0,20
+allam-7b,full_norag,99.39393939393939,11
+allam-7b,full_rag,96.44444444444446,9
+llama-3.1-8b,section_norag,97.71428571428571,21
+llama-3.1-8b,section_rag,99.3015873015873,21
+llama-3.1-8b,full_norag,96.50793650793652,21
+llama-3.1-8b,full_rag,98.09523809523809,21
+qwen-2.5-7b,section_norag,99.74603174603175,21
+qwen-2.5-7b,section_rag,100.0,21
+qwen-2.5-7b,full_norag,99.0,20
+qwen-2.5-7b,full_rag,99.33333333333334,20
+mistral-7b,section_norag,99.4920634920635,21
+mistral-7b,section_rag,99.87301587301587,21
+mistral-7b,full_norag,99.26666666666668,20
+mistral-7b,full_rag,97.80000000000001,20

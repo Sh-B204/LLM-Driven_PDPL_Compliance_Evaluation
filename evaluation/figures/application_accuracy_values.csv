@@ -1,0 +1,309 @@
+model,strategy,app,acc,accuracy_pct
+allam-7b,full_norag,Abyan,0.44000000000000006,44.00000000000001
+allam-7b,full_norag,Aseel Invest,0.6666666666666666,66.66666666666666
+allam-7b,full_norag,Circlys,0.4666666666666667,46.666666666666664
+allam-7b,full_norag,Dinar,0.7333333333333333,73.33333333333333
+allam-7b,full_norag,Manafa,0.6,60.0
+allam-7b,full_norag,Mudaraba,0.5333333333333333,53.333333333333336
+allam-7b,full_norag,Safqah,0.4,40.0
+allam-7b,full_norag,Sukuk,0.4666666666666667,46.666666666666664
+allam-7b,full_norag,Sulfah,0.6666666666666666,66.66666666666666
+allam-7b,full_norag,Ta3meed,0.6,60.0
+allam-7b,full_norag,Tarmeez,0.72,72.0
+allam-7b,full_rag,Abyan,0.5333333333333333,53.333333333333336
+allam-7b,full_rag,Aseel Invest,0.7866666666666667,78.66666666666667
+allam-7b,full_rag,Circlys,0.4666666666666667,46.666666666666664
+allam-7b,full_rag,Dinar,0.7333333333333333,73.33333333333333
+allam-7b,full_rag,Manafa,0.6266666666666667,62.66666666666667
+allam-7b,full_rag,Mudaraba,0.5733333333333334,57.333333333333336
+allam-7b,full_rag,Safqah,0.6133333333333333,61.33333333333333
+allam-7b,full_rag,Sukuk,0.4666666666666667,46.666666666666664
+allam-7b,full_rag,Sulfah,0.5466666666666666,54.666666666666664
+allam-7b,section_norag,Abyan,0.4666666666666667,46.666666666666664
+allam-7b,section_norag,Aseel Invest,0.72,72.0
+allam-7b,section_norag,Circlys,0.5466666666666666,54.666666666666664
+allam-7b,section_norag,Dawul,0.5466666666666666,54.666666666666664
+allam-7b,section_norag,Dinar,0.8400000000000001,84.00000000000001
+allam-7b,section_norag,Drahim,0.5333333333333333,53.333333333333336
+allam-7b,section_norag,Emakn Alarabiya,0.9333333333333333,93.33333333333333
+allam-7b,section_norag,Hakbah,0.76,76.0
+allam-7b,section_norag,Malaa,0.7466666666666667,74.66666666666667
+allam-7b,section_norag,Manafa,0.6,60.0
+allam-7b,section_norag,Money Loop,0.3466666666666667,34.66666666666667
+allam-7b,section_norag,Mudaraba,0.6399999999999999,63.99999999999999
+allam-7b,section_norag,Rakeez,0.6133333333333333,61.33333333333333
+allam-7b,section_norag,Safqah,0.6,60.0
+allam-7b,section_norag,Sahm,0.6,60.0
+allam-7b,section_norag,Sukuk,0.7066666666666667,70.66666666666667
+allam-7b,section_norag,Sulfah,0.6399999999999999,63.99999999999999
+allam-7b,section_norag,Ta3meed,0.6,60.0
+allam-7b,section_norag,Tamra Capital,0.6,60.0
+allam-7b,section_norag,Tarmeez,0.7733333333333333,77.33333333333333
+allam-7b,section_rag,Abyan,0.52,52.0
+allam-7b,section_rag,Aseel Invest,0.7733333333333333,77.33333333333333
+allam-7b,section_rag,Circlys,0.49333333333333335,49.333333333333336
+allam-7b,section_rag,Dawul,0.7066666666666667,70.66666666666667
+allam-7b,section_rag,Dinar,0.7333333333333333,73.33333333333333
+allam-7b,section_rag,Drahim,0.6666666666666666,66.66666666666666
+allam-7b,section_rag,Emakn Alarabiya,0.9333333333333333,93.33333333333333
+allam-7b,section_rag,Hakbah,0.7333333333333333,73.33333333333333
+allam-7b,section_rag,Malaa,0.8133333333333332,81.33333333333333
+allam-7b,section_rag,Manafa,0.6399999999999999,63.99999999999999
+allam-7b,section_rag,Money Loop,0.72,72.0
+allam-7b,section_rag,Mudaraba,0.6666666666666666,66.66666666666666
+allam-7b,section_rag,Rakeez,0.6399999999999999,63.99999999999999
+allam-7b,section_rag,Safqah,0.6399999999999999,63.99999999999999
+allam-7b,section_rag,Sahm,0.5733333333333334,57.333333333333336
+allam-7b,section_rag,Sukuk,0.6266666666666667,62.66666666666667
+allam-7b,section_rag,Sulfah,0.5599999999999999,55.99999999999999
+allam-7b,section_rag,Ta3meed,0.5333333333333333,53.333333333333336
+allam-7b,section_rag,Tamra Capital,0.6399999999999999,63.99999999999999
+allam-7b,section_rag,Tarmeez,0.72,72.0
+llama-3.1-8b,full_norag,Abyan,0.5333333333333333,53.333333333333336
+llama-3.1-8b,full_norag,Aseel Invest,0.7333333333333333,73.33333333333333
+llama-3.1-8b,full_norag,Awaed,0.6933333333333332,69.33333333333333
+llama-3.1-8b,full_norag,Circlys,0.6,60.0
+llama-3.1-8b,full_norag,Dawul,0.4133333333333333,41.33333333333333
+llama-3.1-8b,full_norag,Dinar,0.8133333333333332,81.33333333333333
+llama-3.1-8b,full_norag,Drahim,0.6533333333333333,65.33333333333333
+llama-3.1-8b,full_norag,Emakn Alarabiya,0.8,80.0
+llama-3.1-8b,full_norag,Hakbah,0.6666666666666666,66.66666666666666
+llama-3.1-8b,full_norag,Malaa,0.8,80.0
+llama-3.1-8b,full_norag,Manafa,0.8,80.0
+llama-3.1-8b,full_norag,Money Loop,0.2533333333333333,25.33333333333333
+llama-3.1-8b,full_norag,Mudaraba,0.6799999999999999,68.0
+llama-3.1-8b,full_norag,Rakeez,0.6133333333333333,61.33333333333333
+llama-3.1-8b,full_norag,Safqah,0.6,60.0
+llama-3.1-8b,full_norag,Sahm,0.5466666666666666,54.666666666666664
+llama-3.1-8b,full_norag,Sukuk,0.4666666666666667,46.666666666666664
+llama-3.1-8b,full_norag,Sulfah,0.6666666666666666,66.66666666666666
+llama-3.1-8b,full_norag,Ta3meed,0.7333333333333333,73.33333333333333
+llama-3.1-8b,full_norag,Tamra Capital,0.7866666666666667,78.66666666666667
+llama-3.1-8b,full_norag,Tarmeez,0.7466666666666667,74.66666666666667
+llama-3.1-8b,full_rag,Abyan,0.6,60.0
+llama-3.1-8b,full_rag,Aseel Invest,0.7333333333333333,73.33333333333333
+llama-3.1-8b,full_rag,Awaed,0.6399999999999999,63.99999999999999
+llama-3.1-8b,full_rag,Circlys,0.5333333333333333,53.333333333333336
+llama-3.1-8b,full_rag,Dawul,0.3333333333333333,33.33333333333333
+llama-3.1-8b,full_rag,Dinar,0.8533333333333333,85.33333333333333
+llama-3.1-8b,full_rag,Drahim,0.6,60.0
+llama-3.1-8b,full_rag,Emakn Alarabiya,0.7866666666666667,78.66666666666667
+llama-3.1-8b,full_rag,Hakbah,0.6666666666666666,66.66666666666666
+llama-3.1-8b,full_rag,Malaa,0.8,80.0
+llama-3.1-8b,full_rag,Manafa,0.6666666666666666,66.66666666666666
+llama-3.1-8b,full_rag,Money Loop,0.26666666666666666,26.666666666666668
+llama-3.1-8b,full_rag,Mudaraba,0.6533333333333333,65.33333333333333
+llama-3.1-8b,full_rag,Rakeez,0.5733333333333334,57.333333333333336
+llama-3.1-8b,full_rag,Safqah,0.6,60.0
+llama-3.1-8b,full_rag,Sahm,0.5733333333333334,57.333333333333336
+llama-3.1-8b,full_rag,Sukuk,0.4,40.0
+llama-3.1-8b,full_rag,Sulfah,0.6,60.0
+llama-3.1-8b,full_rag,Ta3meed,0.5466666666666666,54.666666666666664
+llama-3.1-8b,full_rag,Tamra Capital,0.7066666666666667,70.66666666666667
+llama-3.1-8b,full_rag,Tarmeez,0.7066666666666667,70.66666666666667
+llama-3.1-8b,section_norag,Abyan,0.6,60.0
+llama-3.1-8b,section_norag,Aseel Invest,0.7066666666666667,70.66666666666667
+llama-3.1-8b,section_norag,Awaed,0.6933333333333332,69.33333333333333
+llama-3.1-8b,section_norag,Circlys,0.6266666666666667,62.66666666666667
+llama-3.1-8b,section_norag,Dawul,0.4666666666666667,46.666666666666664
+llama-3.1-8b,section_norag,Dinar,0.8533333333333333,85.33333333333333
+llama-3.1-8b,section_norag,Drahim,0.5333333333333333,53.333333333333336
+llama-3.1-8b,section_norag,Emakn Alarabiya,0.8666666666666668,86.66666666666669
+llama-3.1-8b,section_norag,Hakbah,0.7333333333333333,73.33333333333333
+llama-3.1-8b,section_norag,Malaa,0.8266666666666668,82.66666666666667
+llama-3.1-8b,section_norag,Manafa,0.72,72.0
+llama-3.1-8b,section_norag,Money Loop,0.4,40.0
+llama-3.1-8b,section_norag,Mudaraba,0.6399999999999999,63.99999999999999
+llama-3.1-8b,section_norag,Rakeez,0.7066666666666667,70.66666666666667
+llama-3.1-8b,section_norag,Safqah,0.6133333333333333,61.33333333333333
+llama-3.1-8b,section_norag,Sahm,0.6,60.0
+llama-3.1-8b,section_norag,Sukuk,0.4666666666666667,46.666666666666664
+llama-3.1-8b,section_norag,Sulfah,0.6666666666666666,66.66666666666666
+llama-3.1-8b,section_norag,Ta3meed,0.6,60.0
+llama-3.1-8b,section_norag,Tamra Capital,0.6666666666666666,66.66666666666666
+llama-3.1-8b,section_norag,Tarmeez,0.8,80.0
+llama-3.1-8b,section_rag,Abyan,0.4666666666666667,46.666666666666664
+llama-3.1-8b,section_rag,Aseel Invest,0.6799999999999999,68.0
+llama-3.1-8b,section_rag,Awaed,0.6933333333333332,69.33333333333333
+llama-3.1-8b,section_rag,Circlys,0.4666666666666667,46.666666666666664
+llama-3.1-8b,section_rag,Dawul,0.2533333333333333,25.33333333333333
+llama-3.1-8b,section_rag,Dinar,0.8,80.0
+llama-3.1-8b,section_rag,Drahim,0.5333333333333333,53.333333333333336
+llama-3.1-8b,section_rag,Emakn Alarabiya,0.9333333333333333,93.33333333333333
+llama-3.1-8b,section_rag,Hakbah,0.7333333333333333,73.33333333333333
+llama-3.1-8b,section_rag,Malaa,0.8,80.0
+llama-3.1-8b,section_rag,Manafa,0.6666666666666666,66.66666666666666
+llama-3.1-8b,section_rag,Money Loop,0.21333333333333332,21.333333333333332
+llama-3.1-8b,section_rag,Mudaraba,0.6133333333333333,61.33333333333333
+llama-3.1-8b,section_rag,Rakeez,0.5333333333333333,53.333333333333336
+llama-3.1-8b,section_rag,Safqah,0.5333333333333333,53.333333333333336
+llama-3.1-8b,section_rag,Sahm,0.5333333333333333,53.333333333333336
+llama-3.1-8b,section_rag,Sukuk,0.4,40.0
+llama-3.1-8b,section_rag,Sulfah,0.6,60.0
+llama-3.1-8b,section_rag,Ta3meed,0.6,60.0
+llama-3.1-8b,section_rag,Tamra Capital,0.7333333333333333,73.33333333333333
+llama-3.1-8b,section_rag,Tarmeez,0.6666666666666666,66.66666666666666
+mistral-7b,full_norag,Abyan,0.4,40.0
+mistral-7b,full_norag,Aseel Invest,0.7333333333333333,73.33333333333333
+mistral-7b,full_norag,Circlys,0.5333333333333333,53.333333333333336
+mistral-7b,full_norag,Dawul,0.21333333333333332,21.333333333333332
+mistral-7b,full_norag,Dinar,0.8666666666666668,86.66666666666669
+mistral-7b,full_norag,Drahim,0.5333333333333333,53.333333333333336
+mistral-7b,full_norag,Emakn Alarabiya,0.9333333333333333,93.33333333333333
+mistral-7b,full_norag,Hakbah,0.7333333333333333,73.33333333333333
+mistral-7b,full_norag,Malaa,0.7333333333333333,73.33333333333333
+mistral-7b,full_norag,Manafa,0.6666666666666666,66.66666666666666
+mistral-7b,full_norag,Money Loop,0.06666666666666667,6.666666666666667
+mistral-7b,full_norag,Mudaraba,0.6,60.0
+mistral-7b,full_norag,Rakeez,0.5866666666666667,58.666666666666664
+mistral-7b,full_norag,Safqah,0.4,40.0
+mistral-7b,full_norag,Sahm,0.6,60.0
+mistral-7b,full_norag,Sukuk,0.4666666666666667,46.666666666666664
+mistral-7b,full_norag,Sulfah,0.6666666666666666,66.66666666666666
+mistral-7b,full_norag,Ta3meed,0.6,60.0
+mistral-7b,full_norag,Tamra Capital,0.7333333333333333,73.33333333333333
+mistral-7b,full_norag,Tarmeez,0.6666666666666666,66.66666666666666
+mistral-7b,full_rag,Abyan,0.5333333333333333,53.333333333333336
+mistral-7b,full_rag,Aseel Invest,0.7333333333333333,73.33333333333333
+mistral-7b,full_rag,Circlys,0.5333333333333333,53.333333333333336
+mistral-7b,full_rag,Dawul,0.2,20.0
+mistral-7b,full_rag,Dinar,0.8,80.0
+mistral-7b,full_rag,Drahim,0.5599999999999999,55.99999999999999
+mistral-7b,full_rag,Emakn Alarabiya,0.9333333333333333,93.33333333333333
+mistral-7b,full_rag,Hakbah,0.7333333333333333,73.33333333333333
+mistral-7b,full_rag,Malaa,0.7333333333333333,73.33333333333333
+mistral-7b,full_rag,Manafa,0.6666666666666666,66.66666666666666
+mistral-7b,full_rag,Money Loop,0.18666666666666668,18.666666666666668
+mistral-7b,full_rag,Mudaraba,0.6266666666666667,62.66666666666667
+mistral-7b,full_rag,Rakeez,0.6933333333333334,69.33333333333334
+mistral-7b,full_rag,Safqah,0.5333333333333333,53.333333333333336
+mistral-7b,full_rag,Sahm,0.6,60.0
+mistral-7b,full_rag,Sukuk,0.4666666666666667,46.666666666666664
+mistral-7b,full_rag,Sulfah,0.6,60.0
+mistral-7b,full_rag,Ta3meed,0.52,52.0
+mistral-7b,full_rag,Tamra Capital,0.8533333333333333,85.33333333333333
+mistral-7b,full_rag,Tarmeez,0.6666666666666666,66.66666666666666
+mistral-7b,section_norag,Abyan,0.4666666666666667,46.666666666666664
+mistral-7b,section_norag,Aseel Invest,0.8,80.0
+mistral-7b,section_norag,Awaed,0.6533333333333333,65.33333333333333
+mistral-7b,section_norag,Circlys,0.5333333333333333,53.333333333333336
+mistral-7b,section_norag,Dawul,0.2,20.0
+mistral-7b,section_norag,Dinar,0.8,80.0
+mistral-7b,section_norag,Drahim,0.5333333333333333,53.333333333333336
+mistral-7b,section_norag,Emakn Alarabiya,0.8933333333333333,89.33333333333333
+mistral-7b,section_norag,Hakbah,0.7333333333333333,73.33333333333333
+mistral-7b,section_norag,Malaa,0.7333333333333333,73.33333333333333
+mistral-7b,section_norag,Manafa,0.6,60.0
+mistral-7b,section_norag,Money Loop,0.06666666666666667,6.666666666666667
+mistral-7b,section_norag,Mudaraba,0.6,60.0
+mistral-7b,section_norag,Rakeez,0.4666666666666667,46.666666666666664
+mistral-7b,section_norag,Safqah,0.49333333333333335,49.333333333333336
+mistral-7b,section_norag,Sahm,0.6,60.0
+mistral-7b,section_norag,Sukuk,0.5333333333333333,53.333333333333336
+mistral-7b,section_norag,Sulfah,0.6666666666666666,66.66666666666666
+mistral-7b,section_norag,Ta3meed,0.6,60.0
+mistral-7b,section_norag,Tamra Capital,0.8,80.0
+mistral-7b,section_norag,Tarmeez,0.6,60.0
+mistral-7b,section_rag,Abyan,0.4,40.0
+mistral-7b,section_rag,Aseel Invest,0.7333333333333333,73.33333333333333
+mistral-7b,section_rag,Awaed,0.6666666666666666,66.66666666666666
+mistral-7b,section_rag,Circlys,0.5333333333333333,53.333333333333336
+mistral-7b,section_rag,Dawul,0.2,20.0
+mistral-7b,section_rag,Dinar,0.8,80.0
+mistral-7b,section_rag,Drahim,0.5333333333333333,53.333333333333336
+mistral-7b,section_rag,Emakn Alarabiya,0.9333333333333333,93.33333333333333
+mistral-7b,section_rag,Hakbah,0.7333333333333333,73.33333333333333
+mistral-7b,section_rag,Malaa,0.8,80.0
+mistral-7b,section_rag,Manafa,0.6,60.0
+mistral-7b,section_rag,Money Loop,0.06666666666666667,6.666666666666667
+mistral-7b,section_rag,Mudaraba,0.6,60.0
+mistral-7b,section_rag,Rakeez,0.4666666666666667,46.666666666666664
+mistral-7b,section_rag,Safqah,0.4533333333333333,45.33333333333333
+mistral-7b,section_rag,Sahm,0.6,60.0
+mistral-7b,section_rag,Sukuk,0.4666666666666667,46.666666666666664
+mistral-7b,section_rag,Sulfah,0.6666666666666666,66.66666666666666
+mistral-7b,section_rag,Ta3meed,0.6,60.0
+mistral-7b,section_rag,Tamra Capital,0.7333333333333333,73.33333333333333
+mistral-7b,section_rag,Tarmeez,0.6,60.0
+qwen-2.5-7b,full_norag,Abyan,0.5333333333333333,53.333333333333336
+qwen-2.5-7b,full_norag,Aseel Invest,0.8,80.0
+qwen-2.5-7b,full_norag,Circlys,0.6,60.0
+qwen-2.5-7b,full_norag,Dawul,0.4,40.0
+qwen-2.5-7b,full_norag,Dinar,0.8666666666666668,86.66666666666669
+qwen-2.5-7b,full_norag,Drahim,0.6,60.0
+qwen-2.5-7b,full_norag,Emakn Alarabiya,0.8,80.0
+qwen-2.5-7b,full_norag,Hakbah,0.7333333333333333,73.33333333333333
+qwen-2.5-7b,full_norag,Malaa,0.8,80.0
+qwen-2.5-7b,full_norag,Manafa,0.8,80.0
+qwen-2.5-7b,full_norag,Money Loop,0.5333333333333333,53.333333333333336
+qwen-2.5-7b,full_norag,Mudaraba,0.6666666666666666,66.66666666666666
+qwen-2.5-7b,full_norag,Rakeez,0.4666666666666667,46.666666666666664
+qwen-2.5-7b,full_norag,Safqah,0.6266666666666667,62.66666666666667
+qwen-2.5-7b,full_norag,Sahm,0.6266666666666667,62.66666666666667
+qwen-2.5-7b,full_norag,Sukuk,0.6,60.0
+qwen-2.5-7b,full_norag,Sulfah,0.6666666666666666,66.66666666666666
+qwen-2.5-7b,full_norag,Ta3meed,0.6666666666666666,66.66666666666666
+qwen-2.5-7b,full_norag,Tamra Capital,0.6666666666666666,66.66666666666666
+qwen-2.5-7b,full_norag,Tarmeez,0.8800000000000001,88.00000000000001
+qwen-2.5-7b,full_rag,Abyan,0.6666666666666666,66.66666666666666
+qwen-2.5-7b,full_rag,Aseel Invest,0.8,80.0
+qwen-2.5-7b,full_rag,Circlys,0.5333333333333333,53.333333333333336
+qwen-2.5-7b,full_rag,Dawul,0.29333333333333333,29.333333333333332
+qwen-2.5-7b,full_rag,Dinar,0.8,80.0
+qwen-2.5-7b,full_rag,Drahim,0.6,60.0
+qwen-2.5-7b,full_rag,Emakn Alarabiya,0.7333333333333333,73.33333333333333
+qwen-2.5-7b,full_rag,Hakbah,0.6666666666666666,66.66666666666666
+qwen-2.5-7b,full_rag,Malaa,0.8666666666666668,86.66666666666669
+qwen-2.5-7b,full_rag,Manafa,0.7333333333333333,73.33333333333333
+qwen-2.5-7b,full_rag,Money Loop,0.42666666666666664,42.666666666666664
+qwen-2.5-7b,full_rag,Mudaraba,0.6666666666666666,66.66666666666666
+qwen-2.5-7b,full_rag,Rakeez,0.6666666666666666,66.66666666666666
+qwen-2.5-7b,full_rag,Safqah,0.5333333333333333,53.333333333333336
+qwen-2.5-7b,full_rag,Sahm,0.6,60.0
+qwen-2.5-7b,full_rag,Sukuk,0.5333333333333333,53.333333333333336
+qwen-2.5-7b,full_rag,Sulfah,0.6,60.0
+qwen-2.5-7b,full_rag,Ta3meed,0.6666666666666666,66.66666666666666
+qwen-2.5-7b,full_rag,Tamra Capital,0.5333333333333333,53.333333333333336
+qwen-2.5-7b,full_rag,Tarmeez,0.7333333333333333,73.33333333333333
+qwen-2.5-7b,section_norag,Abyan,0.5333333333333333,53.333333333333336
+qwen-2.5-7b,section_norag,Aseel Invest,0.8,80.0
+qwen-2.5-7b,section_norag,Awaed,0.7333333333333333,73.33333333333333
+qwen-2.5-7b,section_norag,Circlys,0.6,60.0
+qwen-2.5-7b,section_norag,Dawul,0.3466666666666667,34.66666666666667
+qwen-2.5-7b,section_norag,Dinar,0.8666666666666668,86.66666666666669
+qwen-2.5-7b,section_norag,Drahim,0.5333333333333333,53.333333333333336
+qwen-2.5-7b,section_norag,Emakn Alarabiya,0.8666666666666668,86.66666666666669
+qwen-2.5-7b,section_norag,Hakbah,0.7333333333333333,73.33333333333333
+qwen-2.5-7b,section_norag,Malaa,0.8,80.0
+qwen-2.5-7b,section_norag,Manafa,0.6666666666666666,66.66666666666666
+qwen-2.5-7b,section_norag,Money Loop,0.26666666666666666,26.666666666666668
+qwen-2.5-7b,section_norag,Mudaraba,0.6666666666666666,66.66666666666666
+qwen-2.5-7b,section_norag,Rakeez,0.6,60.0
+qwen-2.5-7b,section_norag,Safqah,0.6,60.0
+qwen-2.5-7b,section_norag,Sahm,0.6,60.0
+qwen-2.5-7b,section_norag,Sukuk,0.5333333333333333,53.333333333333336
+qwen-2.5-7b,section_norag,Sulfah,0.6666666666666666,66.66666666666666
+qwen-2.5-7b,section_norag,Ta3meed,0.6666666666666666,66.66666666666666
+qwen-2.5-7b,section_norag,Tamra Capital,0.6799999999999999,68.0
+qwen-2.5-7b,section_norag,Tarmeez,0.7333333333333333,73.33333333333333
+qwen-2.5-7b,section_rag,Abyan,0.6,60.0
+qwen-2.5-7b,section_rag,Aseel Invest,0.7333333333333333,73.33333333333333
+qwen-2.5-7b,section_rag,Awaed,0.7333333333333333,73.33333333333333
+qwen-2.5-7b,section_rag,Circlys,0.5333333333333333,53.333333333333336
+qwen-2.5-7b,section_rag,Dawul,0.2,20.0
+qwen-2.5-7b,section_rag,Dinar,0.8666666666666668,86.66666666666669
+qwen-2.5-7b,section_rag,Drahim,0.5333333333333333,53.333333333333336
+qwen-2.5-7b,section_rag,Emakn Alarabiya,0.9333333333333333,93.33333333333333
+qwen-2.5-7b,section_rag,Hakbah,0.7333333333333333,73.33333333333333
+qwen-2.5-7b,section_rag,Malaa,0.8,80.0
+qwen-2.5-7b,section_rag,Manafa,0.6666666666666666,66.66666666666666
+qwen-2.5-7b,section_rag,Money Loop,0.4666666666666667,46.666666666666664
+qwen-2.5-7b,section_rag,Mudaraba,0.6,60.0
+qwen-2.5-7b,section_rag,Rakeez,0.5333333333333333,53.333333333333336
+qwen-2.5-7b,section_rag,Safqah,0.5333333333333333,53.333333333333336
+qwen-2.5-7b,section_rag,Sahm,0.6,60.0
+qwen-2.5-7b,section_rag,Sukuk,0.4,40.0
+qwen-2.5-7b,section_rag,Sulfah,0.6,60.0
+qwen-2.5-7b,section_rag,Ta3meed,0.5333333333333333,53.333333333333336
+qwen-2.5-7b,section_rag,Tamra Capital,0.7333333333333333,73.33333333333333
+qwen-2.5-7b,section_rag,Tarmeez,0.7333333333333333,73.33333333333333

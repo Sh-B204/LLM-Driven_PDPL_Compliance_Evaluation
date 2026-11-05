@@ -1,38 +1,16 @@
-# secrets
 .env
-*.key
-# environments / caches
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
 .venv/
 venv/
-env/
-__pycache__/
-*.pyc
-.pytest_cache/
-.ipynb_checkpoints/
-.cache/
-*.egg-info/
-# model weights
 models/
-# generated results
-results/raw/*
-!results/raw/.gitkeep
-results/consolidated/*
-!results/consolidated/.gitkeep
-results/logs/*
-!results/logs/.gitkeep
-results/archive/
-results/smoke_test/
-results/full_policy_rag_test/
-# OS / editor
-.DS_Store
-.vscode/
-.idea/
+results_v2/
 
+# Historical reports and runtime diagnostics
 results/analysis/
+results/logs/
 results/preflight/
-results/preflight_report*.json
-
-# private development material
-tests/
-docs/
-notebooks/
+results_v2*/
+*.log

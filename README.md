@@ -1,86 +1,63 @@
 # LLM-Driven PDPL Disclosure Evaluation
 
-Evaluate privacy-policy disclosures against 15 rubric criteria using ALLaM-7B, LLaMA-3.1-8B, Qwen-2.5-7B and Mistral-7B. Predictions indicate disclosed (1) or missing, unclear or insufficient disclosure (0).
-
-Four strategies are evaluated over five repetitions: `section_rag`, `full_rag`, `section_norag` and `full_norag`. The intended dataset contains 21 applications; execution follows `configs/applications.yaml`.
+Evaluate 21 Saudi FinTech policy documents against 15 binary disclosure criteria using four models and four strategies (section/full policy, with/without RAG), with five repetitions. Predictions concern disclosure in policy text, not implemented protections or legal compliance.
 
 ## Files
 
-| Path | Contents |
+| Path | Purpose |
 |---|---|
-| `configs/` | Applications, models and experiment settings |
-| `data/policies/` | Processed policy DOCX files |
-| `data/pdpl/IRPDPL.docx` | Law retrieval corpus |
-| `data/ground_truth/PDPL_Results.xlsx` | Expert labels: `Expert Analysis` sheet |
-| `rubric/` | The 15 criteria |
-| `prompts/` | Four strategy templates |
-| `src/pdpl_eval/` | Pipeline implementation |
-| `scripts/` | Execution, checks and evaluation |
+| `configs/` | Input paths, pinned model revisions and settings |
+| `data/` | The 21 policy documents, regulatory corpus and final expert reference labels |
+| `prompts/`, `rubric/` | Four prompt templates and 15-item rubric |
+| `src/pdpl/` | Current inference package (protocol 2.0.0) |
+| `src/pdpl/protocol_v1/` | Original protocol 1.1.0 code required to verify saved paper records |
+| `results/raw/` | Saved paper records; preserve unchanged |
+| `provenance/` | Checksum manifests |
+| `evaluation/` | Current combined evaluation tables and figures |
+| `input_analysis/` | Input statistics, extraction audit and token measurements |
 
-## Setup
+## Install and validate
 
-Use Python 3.11 or 3.12 and install a GPU-compatible PyTorch build. Run from the repository root:
+Use Python 3.10 or newer. Install a GPU-compatible PyTorch build for new inference, then:
 
 ```bash
 python -m pip install -r requirements.txt
-python scripts/run_experiments.py --check-inputs
+python run_experiments.py --check-inputs
 ```
 
-Set `HF_TOKEN` using an account with access to the configured models. Keep the actual token private; `.env.example` contains a placeholder.
+Set `HF_TOKEN` privately for gated models. Scripts read the environment variable; they do not automatically load `.env` files. Never commit a real token.
 
-Windows Command Prompt:
+## Reproduce the paper from saved records
 
-```bat
-set "HF_TOKEN=YOUR_PRIVATE_TOKEN"
-```
-
-Linux shell:
+No language-model inference or model downloads are needed:
 
 ```bash
-export HF_TOKEN="YOUR_PRIVATE_TOKEN"
+python evaluate_results.py --repo . --results results --out evaluation --boot 1000
+python plot_results.py --evaluation evaluation --repo . --check-only
+python plot_results.py --evaluation evaluation --repo .
+python analyze_inputs.py --repo . --results results --out input_analysis
 ```
 
-Freeze model revisions and inspect the execution plan:
+Evaluation writes CSV/XLSX tables. Plotting writes PNGs and native LaTeX tables including `T_available`, `T_asymmetry`, `T_criterion_errors` and `T_rag_errors`. Per-application red/green inspection grids are generated in `evaluation/figures/application_binary_grids/`; `--skip-binary` skips them without deleting existing grids. Input analysis writes PNG figures only. Historical PDFs can be removed.
+
+OR is the main section rule. `--aggregation at_least_two`, `majority` or `and` produces exploratory figures in `figures_<rule>/`. RAG comparisons use matching policies within each model and input type.
+
+Basic input analysis uses saved token measurements. To regenerate current measurements for all 21 documents, including Drahim's unrequested ALLaM full-policy input, append `--tokenizers --embeddings`. This downloads tokenizers and loads the small embedding model, not the four language models. Word counts are descriptive; context feasibility uses model-token counts.
+
+## Final study coverage
+
+The 21 x 4 x 4 x 5 design has 1,680 potential records. Ten Drahim/ALLaM full-policy records were not requested. All 1,670 saved records verify as archived protocol 1.1.0: 1,540 successful and 130 context-limit failures. ALLaM covers 20 policies under both section strategies, 11 under full policy without RAG and nine with RAG. Qwen and Mistral cover 21 under section input and 20 under full-policy input. LLaMA covers all 21 under every strategy. Eight configurations cover all 21; nine policies are common to all configurations. Failed predictions are excluded, never scored as zero.
+
+Awaed uses the corrected document and matching saved predictions. ALLaM section-RAG and Qwen full policy without RAG both reach 66.67% accuracy on the same 20 policies. Pooled repetition counts are repeated predictions on the same policies, not independent observations.
+
+## New inference
 
 ```bash
-python scripts/run_experiments.py --pin-revisions
-python scripts/run_experiments.py --dry-run
+python run_pilot.py --app circlys --preflight-only
+python run_pilot.py --app circlys
+python run_experiments.py --resume
 ```
 
-## Preliminary checks
+Current inference uses protocol 2.0.0 with chat-template rendering and constrained binary output, writing separately to `results_v2/`. It is not an identical rerun of the archived protocol 1.1.0 paper experiments. Do not combine protocols or edit archived inputs, prompts, records or protocol-1 verifier code to force fingerprint matches. Source edits affect fingerprints.
 
-Check full-policy RAG, then run one application across all four models and strategies for one repetition:
-
-```bash
-python scripts/run_full_policy_rag_test.py --app circlys --model allam-7b
-python scripts/run_smoke_test.py --app circlys
-```
-
-The pilot saves 16 run records and stops for review. It does not start the full experiment.
-
-## Full experiment
-
-After reviewing the preliminary results:
-
-```bash
-python scripts/run_experiments.py --resume
-python scripts/validate_results.py
-python scripts/consolidate_results.py --evaluate
-```
-
-Matching successful preliminary records are reused. Models load sequentially and unload before the next model; downloaded weights remain cached.
-
-## Results
-
-| Directory | Outputs |
-|---|---|
-| `results/raw/` | Predictions, prompts, responses, section vectors and run metadata |
-| `results/logs/` | Logs and completion reports |
-| `results/preflight/` | RAG context checks |
-| `results/archive/` | Replaced records |
-| `results/consolidated/` | Combined CSV/JSONL results |
-| `results/analysis/` | Evaluation tables and false-positive heatmap |
-
-Evaluation reports dataset-wide and criterion-level metrics, including means and standard deviations across complete repetitions. OR is the primary section aggregation; AND, strict majority and at least two are compared using saved section predictions.
-
-Incomplete predictions are recorded as `parse_failed`, without zero padding. Preserve the complete results directory, inputs, pinned configurations and code version. Additional plots can be generated later without rerunning the models.
+Logs and preflight/completion reports are still created by inference commands, in their output directory, and are ignored by Git. `results/analysis/` contains historical derived reports; current entry points do not create it. Archive it outside the repository if desired. Keep useful technical comments. Preserve `src/pdpl/protocol_v1` unchanged because its source bytes are needed for archived-record verification.

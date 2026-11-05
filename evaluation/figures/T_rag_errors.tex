@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{2pt}
+\caption{FPR and FNR (\%) without and with RAG, pooled over five runs on $n$ matched policies per model and input type.}
+\label{tab:rag_errors}
+\begin{tabular}{ccccc}
+\toprule
+Model & Unit & $n$ & FPR & FNR \\
+\midrule
+ALLaM & Section & 20 & $73.63\rightarrow64.15$ & $5.09\rightarrow8.12$ \\
+ & Full & 9 & $99.02\rightarrow82.30$ & $0.00\rightarrow6.22$ \\
+\midrule
+LLaMA & Section & 21 & $72.81\rightarrow88.06$ & $3.98\rightarrow3.30$ \\
+ & Full & 21 & $68.78\rightarrow69.64$ & $8.75\rightarrow14.55$ \\
+\midrule
+Qwen & Section & 21 & $78.13\rightarrow80.58$ & $2.27\rightarrow3.98$ \\
+ & Full & 20 & $69.63\rightarrow70.96$ & $3.64\rightarrow8.73$ \\
+\midrule
+Mistral & Section & 21 & $91.08\rightarrow93.67$ & $1.59\rightarrow1.14$ \\
+ & Full & 20 & $91.11\rightarrow84.44$ & $0.61\rightarrow2.06$ \\
+\bottomrule
+\end{tabular}
+\end{table}

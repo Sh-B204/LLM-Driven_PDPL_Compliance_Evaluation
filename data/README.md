@@ -1,23 +1,7 @@
-# Evaluation data
+# Evaluation inputs
 
-The dataset covers 21 applications. Processed policy files for
-19 applications are currently included; the remaining two will be
-added after preprocessing.
+All 21 configured application DOCX files are included in `policies/`. Exact paths and IDs are in `configs/applications.yaml`.
 
-| Input | Location |
-|---|---|
-| Processed privacy policies | `data/policies/` |
-| Implementing Regulations corpus | `data/pdpl/IRPDPL.docx` |
-| Expert labels | `data/ground_truth/PDPL_Results.xlsx`, sheet `Expert Analysis` |
+The retrieval corpus is `pdpl/IRPDPL.docx`. Expert labels are in `ground_truth/PDPL_Results.xlsx`, evaluation uses the individual 15 binary criterion labels rather than the percentage column.
 
-Application names, identifiers and policy paths are defined in
-`configs/applications.yaml`. The experiment evaluates the applications
-listed in that file.
-
-Policy files must use Word heading styles to identify sections.
-The loader extracts paragraph text; tables, images and text boxes
-are not extracted.
-
-Expert labels are matched by application name and rubric criterion
-code. Each included application must have a binary label for every
-criterion.
+Heading styles define policy sections. The pipeline reads body paragraphs. Input-analysis tables record the extraction audit and language-script shares.

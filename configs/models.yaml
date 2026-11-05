@@ -3,20 +3,20 @@ models:
     label: "ALLaM-7B"
     type: "hf_local"
     hf_id: "humain-ai/ALLaM-7B-Instruct-preview"
-    revision: null
+    revision: "a28dd1e67420cde72d3629c8633a974cf7d9c366"
     cache_dir: "./models/ALLaM-7B"
     tokenizer_use_fast: false
     trust_remote_code: true
     torch_dtype: "float16"
     device_map: "auto"
-    prompt_template: "<s>[INST] {prompt} [/INST]"  
+    prompt_template: "<s>[INST] {prompt} [/INST]"
     context_limit_tokens: null
 
   - id: "llama-3.1-8b"
     label: "LLaMA-3.1-8B"
     type: "hf_local"
     hf_id: "meta-llama/Llama-3.1-8B-Instruct"
-    revision: null
+    revision: "0e9e39f249a16976918f6564b8830bc894c89659"
     cache_dir: "./models/Llama-3.1-8B"
     tokenizer_use_fast: false
     trust_remote_code: true
@@ -29,7 +29,7 @@ models:
     label: "Qwen-2.5-7B"
     type: "hf_local"
     hf_id: "Qwen/Qwen2.5-7B-Instruct"
-    revision: null
+    revision: "a09a35458c702b33eeacc393d103063234e8bc28"
     cache_dir: "./models/Qwen-2.5-7B"
     tokenizer_use_fast: false
     trust_remote_code: true
@@ -42,7 +42,7 @@ models:
     label: "Mistral-7B"
     type: "hf_local"
     hf_id: "mistralai/Mistral-7B-Instruct-v0.3"
-    revision: null
+    revision: "c170c708c41dac9275d15a8fff4eca08d52bab71"
     cache_dir: "./models/Mistral-7B"
     tokenizer_use_fast: false
     trust_remote_code: true
