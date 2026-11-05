@@ -50,7 +50,9 @@ The 21 x 4 x 4 x 5 design has 1,680 potential records. Ten Drahim/ALLaM full-pol
 
 Awaed uses the corrected document and matching saved predictions. ALLaM section-RAG and Qwen full policy without RAG both reach 66.67% accuracy on the same 20 policies. Pooled repetition counts are repeated predictions on the same policies, not independent observations.
 
-## New inference
+## Running new experiments
+
+Check the RAG context, run the pilot, then start the full experiment:
 
 ```bash
 python run_pilot.py --app circlys --preflight-only
@@ -58,6 +60,4 @@ python run_pilot.py --app circlys
 python run_experiments.py --resume
 ```
 
-Current inference uses protocol 2.0.0 with chat-template rendering and constrained binary output, writing separately to `results_v2/`. It is not an identical rerun of the archived protocol 1.1.0 paper experiments. Do not combine protocols or edit archived inputs, prompts, records or protocol-1 verifier code to force fingerprint matches. Source edits affect fingerprints.
-
-Logs and preflight/completion reports are still created by inference commands, in their output directory, and are ignored by Git. `results/analysis/` contains historical derived reports; current entry points do not create it. Archive it outside the repository if desired. Keep useful technical comments. Preserve `src/pdpl/protocol_v1` unchanged because its source bytes are needed for archived-record verification.
+New runs are saved to `results_v2/` using updated prompting and output constraints. To reproduce the paper’s reported results, use the saved records in `results/raw/` with the evaluation commands above.
